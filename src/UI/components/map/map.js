@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
+import {colors} from "../../../BLL/store/constants";
 
 
 class DumpMap extends Component {
@@ -17,6 +18,19 @@ class DumpMap extends Component {
                 zoom: 7
             });
 
+            const placemarks = this.props.placemarks.map(placemark => new ymaps.Placemark(
+                placemark.coordinates,  {
+                    balloonContent: placemark.state
+                }, {
+                    preset: 'islands#icon',
+                    iconColor: colors[placemark.state]
+                })
+
+            );
+            for (let placemark of placemarks) {
+                this.Ymap.geoObjects.add(placemark)
+            }
+
             osme.geoJSON('RU-YAR', {lang: 'ru'}, (data) => {
                 let collection = osme.toYandex(data, ymaps);
                 collection.add(this.Ymap);
@@ -31,7 +45,7 @@ class DumpMap extends Component {
                 ];
                 let meta = data.metaData,
                     maxLevel = meta.levels[1] + 1;
-                
+
                 collection.setStyles((object, yobject) => {
                     const level = object.properties.level;
                     return ({
@@ -54,7 +68,7 @@ class DumpMap extends Component {
     }
 
     // componentDidUpdate() {
-    //     //здесь описать placemarks
+    //     //update props
     // }
 }
 
