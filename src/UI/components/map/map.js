@@ -11,6 +11,7 @@ class DumpMap extends Component {
 
     componentDidMount() {
         ymaps.ready(() => {
+
             this.Ymap = new ymaps.Map("YandexMap", {
                 center: [55.76, 37.64],
                 zoom: 7
@@ -30,10 +31,9 @@ class DumpMap extends Component {
                 ];
                 let meta = data.metaData,
                     maxLevel = meta.levels[1] + 1;
-
-                // colorize the collection
+                
                 collection.setStyles((object, yobject) => {
-                    var level = object.properties.level;
+                    const level = object.properties.level;
                     return ({
                         zIndex: level,
                         zIndexHover: level,
@@ -52,6 +52,10 @@ class DumpMap extends Component {
             <div id="YandexMap" style={{"width": "600px", "height": "400px"}}></div>
         );
     }
+
+    // componentDidUpdate() {
+    //     //здесь описать placemarks
+    // }
 }
 
 
