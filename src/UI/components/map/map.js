@@ -1,16 +1,49 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import osme from 'osme';
 
 
 class DumpMap extends Component {
-    componentDidMount() {
-        ymaps.ready(this.init);
+    constructor(props) {
+        super(props);
+        this.Ymap = null;
     }
 
-    init() {
-        this.Ymap = new ymaps.Map("YandexMap", {
-            center: [55.76, 37.64],
-            zoom: 7
+    componentDidMount() {
+        ymaps.ready(() => {
+            this.Ymap = new ymaps.Map("YandexMap", {
+                center: [55.76, 37.64],
+                zoom: 7
+            });
+
+            osme.geoJSON('RU-YAR', {lang: 'ru'}, (data) => {
+                let collection = osme.toYandex(data, ymaps);
+                collection.add(this.Ymap);
+
+                this.Ymap.setBounds(collection.collection.getBounds(), {duration: 300});
+
+                const strokeColors = [
+                    '#000',
+                    '#F0F',
+                    '#00F',
+                    '#0FF',
+                ];
+                let meta = data.metaData,
+                    maxLevel = meta.levels[1] + 1;
+
+                // colorize the collection
+                collection.setStyles((object, yobject) => {
+                    var level = object.properties.level;
+                    return ({
+                        zIndex: level,
+                        zIndexHover: level,
+                        strokeWidth: Math.max(1, level == 2 ? 2 : (maxLevel - level)),
+                        strokeColor: strokeColors[maxLevel - level] || '#000',
+                        fillColor: '#FFE2',
+                    });
+                });
+
+            });
         });
     }
 
@@ -24,7 +57,6 @@ class DumpMap extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        filters: state.filters,
         placemarks: state.placemarks
     }
 };
