@@ -2,7 +2,7 @@ const methods = require('./constants').methods;
 const {Pool} = require('pg');
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || 3000,
+    connectionString: process.env.DATABASE_URL || 5433,
     ssl: true
 });
 
