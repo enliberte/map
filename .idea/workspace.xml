@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/UI/components/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/map/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/index_bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+            <state relative-caret-position="150">
+              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -67,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/api/api.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -146,8 +134,8 @@
         <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
       </list>
     </option>
   </component>
@@ -305,15 +293,16 @@
       <workItem from="1562675802461" duration="8305000" />
       <workItem from="1562825048868" duration="135000" />
       <workItem from="1562826650300" duration="7997000" />
-      <workItem from="1562875276484" duration="4878000" />
+      <workItem from="1562875276484" duration="5661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21315000" />
+    <option name="totallyTimeSpent" value="22098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="693" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -421,20 +410,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/api/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
