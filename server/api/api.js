@@ -9,7 +9,7 @@ const pool = new Pool({
 const getPlacemarks = async () => {
     try {
         const client = await pool.connect();
-        const result = await client.query('SELECT id, coordinates, state FROM placemarks');
+        const result = await client.query('SELECT id, coordinates, state FROM public.placemarks');
         return {results: (result) ? result.rows : null};
     } catch(err) {
         console.log(err);
@@ -20,7 +20,7 @@ const getPlacemarks = async () => {
 const getPlacemark = async (id) => {
     try {
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM placemarks WHERE id = $1', [id]);
+        const result = await client.query('SELECT * FROM public.placemarks WHERE id = $1', [id]);
         return {results: (result) ? result.rows : null};
     } catch(err) {
         console.log(err);
