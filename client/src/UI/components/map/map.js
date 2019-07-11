@@ -25,6 +25,7 @@ class DumpMap extends Component {
 
             const placemarks = this.props.placemarks.map(placemark => new ymaps.Placemark(
                 [placemark.latitude, placemark.longitude],  {
+                    hintContent: placemark.address,
                     balloonContent: placemark.state
                 }, {
                     preset: 'islands#icon',
