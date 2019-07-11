@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const apiRouter = require('./api/api');
+const {apiRouter, getPlacemarks} = require('./api/api');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 const app = express();
@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/dist'));
 
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname + '/dist', 'index.html'))
 });
 
@@ -18,9 +18,13 @@ app.get('*', (req, res) => {
 app.post('/', (req, res) => {
     const method = req.body.method;
     const params = req.body.params;
-    const data = apiRouter(method, params);
-    res.send(data);
+    const promise = apiRouter(method, params);
+    promise
+        .then(result => res.send(result.rows))
+        .catch(err => console.log(err));
 });
+
+
 
 
 app.listen(port);

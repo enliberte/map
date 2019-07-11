@@ -2,12 +2,17 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
+import {setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
 
 
 class DumpMap extends Component {
     constructor(props) {
         super(props);
         this.Ymap = null;
+    }
+
+    componentWillMount() {
+        this.props.onSetPlacemarks();
     }
 
     componentDidMount() {
@@ -19,7 +24,7 @@ class DumpMap extends Component {
             });
 
             const placemarks = this.props.placemarks.map(placemark => new ymaps.Placemark(
-                placemark.coordinates,  {
+                [placemark.latitude, placemark.longitude],  {
                     balloonContent: placemark.state
                 }, {
                     preset: 'islands#icon',
@@ -79,5 +84,13 @@ const mapStatesToProps = (state) => {
     }
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSetPlacemarks() {
+            dispatch(setPlacemarks());
+        }
+    }
+};
 
-export default connect(mapStatesToProps)(DumpMap);
+
+export default connect(mapStatesToProps, mapDispatchToProps)(DumpMap);
