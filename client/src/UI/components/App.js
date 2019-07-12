@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DumpMap from './map/map';
+import {withCookies} from 'react-cookie';
 
 
 class App extends Component {
@@ -15,4 +16,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default withCookies(App);
