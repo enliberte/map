@@ -51,7 +51,7 @@ const apiRouter = (req, res) => {
             if (req.cookies) {
                 if (req.cookies.sid) {
                     const checkSidSQL = {
-                        text: 'SELECT login, role FROM sessions WHERE login=$1',
+                        text: 'SELECT login, role FROM sessions WHERE sid=$1',
                         values: [req.cookies.sid]
                     };
                     pool.query(checkSidSQL)
