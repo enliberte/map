@@ -64,6 +64,7 @@ const apiRouter = (req, res) => {
                     }
                 })
                 .catch(err => res.status(404).send(err));
+            break;
         default:
             throw new Error('No such method');
     }
