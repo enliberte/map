@@ -3,13 +3,13 @@ const {Pool} = require('pg');
 const uuid4 = require('uuid4');
 
 const pool = new Pool({
-    host: 'localhost',
-    port: '5432',
-    database: 'app',
-    user: 'postgres',
-    password: 'postgres',
-    // connectionString: process.env.DATABASE_URL || 5432,
-    // ssl: true
+    // host: 'localhost',
+    // port: '5432',
+    // database: 'app',
+    // user: 'postgres',
+    // password: 'postgres',
+    connectionString: process.env.DATABASE_URL || 5432,
+    ssl: true
 });
 
 const apiRouter = (req, res) => {
