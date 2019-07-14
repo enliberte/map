@@ -5,6 +5,7 @@ const auth = (state={}, action) => {
         case a.SET_AUTH:
             return {
                 ...state,
+                isAuthorized: true,
                 login: action.payload.login,
                 role: action.payload.role
             };
