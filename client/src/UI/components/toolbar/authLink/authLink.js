@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {openAuthPanel} from "../../../../BLL/store/action_creators/authPanel";
 
 
 class AuthLink extends Component {
     render() {
         return (
-            <a href="#">{this.props.text}</a>
+            <a href="#" onClick={this.props.onOpenAuthPanel}>{this.props.text}</a>
         )
     }
 }
@@ -19,7 +20,11 @@ const mapStatesToProps = (state) => {
 
 
 const mapDispathToProps = (dispatch) => {
-    return {}
+    return {
+        onOpenAuthPanel() {
+            dispatch(openAuthPanel());
+        }
+    }
 };
 
 

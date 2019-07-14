@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import DumpMap from './map/map';
 import {isAuthorized} from "../../BLL/store/action_creators/auth";
 import Toolbar from "./toolbar/toolbar";
+import AuthPanel from './authPanel/authPanel';
 
 
 class App extends Component {
@@ -16,10 +17,17 @@ class App extends Component {
             <div>
                 <Toolbar />
                 <DumpMap />
+                {this.props.authPanelIsDisplayed && <AuthPanel />}
             </div>
         );
     }
 }
+
+const mapStatesToProps = (state) => {
+    return {
+        authPanelIsDisplayed: state.authPanel.isDisplayed
+    }
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -30,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStatesToProps, mapDispatchToProps)(App);

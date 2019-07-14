@@ -21,32 +21,33 @@ const apiRouter = (req, res) => {
                 .then(result => res.send(result.rows))
                 .catch(err => res.status(404).send(err));
             break;
-        // case methods.AUTH:
-        //     const sql = {
-        //         text: 'SELECT login, role FROM users WHERE login=$1 AND password=$2',
-        //         values: [params.login, params.password]
-        //     };
-        //     pool.query(sql)
-        //         .then(result => {
-        //             if (result.rows) {
-        //                 const sid = uuid4();
-        //                 const data = {login: result.rows[0].login, role: result.rows[0].role};
-        //                 const insertSidSQL = {
-        //                     text: 'INSERT INTO sessions (sid, login, role) VALUES ($1, $2, $3)',
-        //                     values: [sid, result.rows[0].login, result.rows[0].role]
-        //                 };
-        //                 pool.query(insertSidSQL)
-        //                     .then(result => {
-        //                         res.cookie('sid', sid);
-        //                         res.send(data);
-        //                     })
-        //                     .catch(err => res.status(404).send(err));
-        //
-        //             } else {
-        //                 throw new Error('incorrect login or password');
-        //             }
-        //         })
-        //         .catch(err => res.status(404).send(err));
+        case methods.AUTH:
+            const authData = {
+                text: 'SELECT login, role FROM users WHERE login=$1 AND password=$2',
+                values: [params.login, params.password]
+            };
+            pool.query(authData)
+                .then(result => {
+                    if (result.rows) {
+                        const sid = uuid4();
+                        const data = {login: result.rows[0].login, role: result.rows[0].role};
+                        const insertSidSQL = {
+                            text: 'INSERT INTO sessions (sid, login, role) VALUES ($1, $2, $3)',
+                            values: [sid, result.rows[0].login, result.rows[0].role]
+                        };
+                        pool.query(insertSidSQL)
+                            .then(result => {
+                                res.cookie('sid', sid);
+                                res.send(data);
+                            })
+                            .catch(err => res.status(401).send(err));
+
+                    } else {
+                        res.status(401).send({isAuthorised: false});
+                    }
+                })
+                .catch(err => res.status(404).send(err));
+            break;
         case methods.IS_AUTHORIZED:
             if (req.cookies) {
                 if (req.cookies.sid) {

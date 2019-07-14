@@ -2,6 +2,10 @@ import {actions as a} from "../constants";
 import * as axios from 'axios';
 
 
+export const setLogin = login => ({type: a.SET_LOGIN, payload: login});
+
+export const setPassword = password => ({type: a.SET_PASSWORD, payload: password});
+
 export const setAuthData = (login, role) => ({type: a.SET_AUTH, payload: {login, role}});
 
 export const isAuthorized = () => (dispatch) => {

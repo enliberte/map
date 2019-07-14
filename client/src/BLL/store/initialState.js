@@ -5,6 +5,9 @@ const initialState = {
         login: '',
         password: '',
         role: ''
+    },
+    authPanel: {
+        isDisplayed: false
     }
 };
 
