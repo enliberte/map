@@ -50,16 +50,15 @@ const apiRouter = (req, res) => {
         case methods.IS_AUTHORIZED:
             if (req.cookies) {
                 if (req.cookies.sid) {
-                    const checkSidSQL = {
+                    const CHECK_SID_SQL = {
                         text: 'SELECT login, role FROM sessions WHERE sid=$1',
                         values: [req.cookies.sid]
                     };
-                    pool.query(checkSidSQL)
+                    pool.query(CHECK_SID_SQL)
                         .then(result => {
-                            console.log('RESULT', result);
                             if (result.rows) {
-                                const data = {login: result.rows[0].login, role: result.rows[0].role};
-                                res.send(data);
+                                const isAuthorizedData = {login: result.rows[0].login, role: result.rows[0].role};
+                                res.status(401).send(isAuthorizedData);
 
                             } else {
                                 res.send({isAuthorised: false});
@@ -67,10 +66,10 @@ const apiRouter = (req, res) => {
                         })
                         .catch(err => res.status(404).send(err));
                 } else {
-                    res.send({isAuthorised: false});
+                    res.status(401).send({isAuthorised: false});
                 }
             } else {
-                res.send({isAuthorised: false});
+                res.status(401).send({isAuthorised: false});
             }
             break;
         default:
