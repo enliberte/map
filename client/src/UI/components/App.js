@@ -8,9 +8,9 @@ import {isAuthorized} from "../../BLL/store/action_creators/auth";
 
 class App extends Component {
 
-    // componentWillMount() {
-    //     this.props.isAuthorized();
-    // }
+    componentWillMount() {
+        this.props.isAuthorized();
+    }
 
     render() {
         return (

@@ -48,22 +48,30 @@ const apiRouter = (req, res) => {
         //         })
         //         .catch(err => res.status(404).send(err));
         case methods.IS_AUTHORIZED:
-            const checkSidSQL = {
-                text: 'SELECT login, role FROM sessions WHERE login=$1',
-                values: [req.cookies.sid]
-            };
-            pool.query(checkSidSQL)
-                .then(result => {
-                    console.log('RESULT', result);
-                    if (result.rows) {
-                        const data = {login: result.rows[0].login, role: result.rows[0].role};
-                        res.send(data);
+            if (req.cookies) {
+                if (req.cookies.sid) {
+                    const checkSidSQL = {
+                        text: 'SELECT login, role FROM sessions WHERE login=$1',
+                        values: [req.cookies.sid]
+                    };
+                    pool.query(checkSidSQL)
+                        .then(result => {
+                            console.log('RESULT', result);
+                            if (result.rows) {
+                                const data = {login: result.rows[0].login, role: result.rows[0].role};
+                                res.send(data);
 
-                    } else {
-                        res.send({isAuthorised: false});
-                    }
-                })
-                .catch(err => res.status(404).send(err));
+                            } else {
+                                res.send({isAuthorised: false});
+                            }
+                        })
+                        .catch(err => res.status(404).send(err));
+                } else {
+                    res.send({isAuthorised: false});
+                }
+            } else {
+                res.send({isAuthorised: false});
+            }
             break;
         default:
             throw new Error('No such method');
