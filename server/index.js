@@ -19,10 +19,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/', (req, res) => {
-    const method = req.body.method;
-    const params = req.body.params;
-    const promise = apiRouter(method, params);
-    promise.then(result => res.send(result.rows)).catch(err => res.status(404).send(err));
+    apiRouter(req, res);
 });
 
 
