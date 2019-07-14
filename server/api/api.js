@@ -28,8 +28,6 @@ const apiRouter = (req, res) => {
             };
             pool.query(authData)
                 .then(result => {
-                    console.log('RESULT', result);
-                    console.log('ROWS', result.rows);
                     if (result.rows) {
                         const sid = uuid4();
                         const data = {login: result.rows[0].login, role: result.rows[0].role};
@@ -39,6 +37,8 @@ const apiRouter = (req, res) => {
                         };
                         pool.query(insertSidSQL)
                             .then(result => {
+                                console.log('SID', sid);
+                                console.log('RESULT', result);
                                 res.cookie('sid', sid);
                                 res.send(data);
                             })
