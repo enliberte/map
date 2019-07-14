@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {apiRouter} = require('./api/api');
 const bodyParser = require('body-parser');
-const cookiesMiddleware = require('universal-cookie-express');
+const cookieParser = require('cookie-parser');
 
 
 const port = process.env.PORT || 8080;
@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/dist'));
-app.use(cookiesMiddleware());
+app.use(cookieParser());
 
 
 app.get('/', (req, res) => {
