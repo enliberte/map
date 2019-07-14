@@ -20,6 +20,7 @@ const apiRouter = (req, res) => {
             pool.query('SELECT * FROM placemarks')
                 .then(result => res.send(result.rows))
                 .catch(err => res.status(404).send(err));
+            break;
         // case methods.AUTH:
         //     const sql = {
         //         text: 'SELECT login, role FROM users WHERE login=$1 AND password=$2',
