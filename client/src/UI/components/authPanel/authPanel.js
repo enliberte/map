@@ -26,11 +26,11 @@ const mapStatesToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSetLogin(e) {
-            dispatch(setLogin(e.target.value));
+        onSetLogin() {
+            dispatch(setLogin(event.target.value));
         },
-        onSetPassword(e) {
-            dispatch(setPassword(e.target.value));
+        onSetPassword() {
+            dispatch(setPassword(event.target.value));
         },
         onSubmit(login, password) {
             event.preventDefault();
