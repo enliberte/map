@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/reducers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/UI/components/authPanel/authPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/authPanel/authPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/dist/index_bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/dist/index_bundle.js" afterDir="false" />
-    </list>
+    <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -35,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/api/api.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="257">
@@ -101,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/auth.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -331,12 +327,12 @@
       <workItem from="1562940372752" duration="1159000" />
       <workItem from="1563025619180" duration="78000" />
       <workItem from="1563094217811" duration="4178000" />
-      <workItem from="1563104743247" duration="10450000" />
+      <workItem from="1563104743247" duration="10768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38529000" />
+    <option name="totallyTimeSpent" value="38847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="693" extended-state="0" />
@@ -504,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/authPanel/authPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -549,6 +538,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
