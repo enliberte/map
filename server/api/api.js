@@ -30,6 +30,7 @@ const apiRouter = (req, res) => {
                 .then(result => {
                     if (result.rows) {
                         const sid = uuid4();
+                        console.log(sid, typeof sid);
                         const data = {login: result.rows[0].login, role: result.rows[0].role};
                         const insertSidSQL = {
                             text: 'INSERT INTO sessions (sid, login, role) VALUES ($1, $2, $3)',
@@ -37,8 +38,6 @@ const apiRouter = (req, res) => {
                         };
                         pool.query(insertSidSQL)
                             .then(result => {
-                                console.log('SID', sid);
-                                console.log('RESULT', result);
                                 res.cookie('sid', sid);
                                 res.send(data);
                             })
