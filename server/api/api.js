@@ -58,10 +58,10 @@ const apiRouter = (req, res) => {
                         .then(result => {
                             if (result.rows) {
                                 const isAuthorizedData = {login: result.rows[0].login, role: result.rows[0].role};
-                                res.status(401).send(isAuthorizedData);
+                                res.send(isAuthorizedData);
 
                             } else {
-                                res.send({isAuthorised: false});
+                                res.status(404).send({isAuthorised: false});
                             }
                         })
                         .catch(err => res.status(404).send(err));
