@@ -1,7 +1,7 @@
 const uuid4 = require('uuid4');
 
 
-export const auth = (pool, params, res) => {
+const auth = (pool, params, res) => {
     const AUTH_DATA_SQL = {
         text: 'SELECT login, role FROM users WHERE login=$1 AND password=$2',
         values: [params.login, params.password]
@@ -31,7 +31,7 @@ export const auth = (pool, params, res) => {
 };
 
 
-export const isAuthorized = (pool, req, res) => {
+const isAuthorized = (pool, req, res) => {
     if (req.cookies) {
         if (req.cookies.sid) {
             const CHECK_SID_SQL = {
@@ -56,3 +56,7 @@ export const isAuthorized = (pool, req, res) => {
         res.status(401).send({isAuthorised: false});
     }
 };
+
+
+exports.auth = auth;
+exports.isAuthorized = isAuthorized;

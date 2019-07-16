@@ -1,5 +1,6 @@
-import {auth, isAuthorized} from "./methods/auth";
-import {getAllPlacemarks} from "./methods/placemarks";
+const auth = require("./methods/auth").auth;
+const isAuthorized = require("./methods/auth").isAuthorized;
+const getAllPlacemarks = require("./methods/placemarks").getAllPlacemarks;
 const methods = require('./constants').methods;
 const {Pool} = require('pg');
 
