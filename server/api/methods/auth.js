@@ -10,12 +10,13 @@ const auth = (pool, params, res) => {
         .then(result => {
             if (result.rows) {
                 const sid = uuid4();
+                console.log(sid, typeof sid);
                 const data = {login: result.rows[0].login, role: result.rows[0].role};
-                const insertSidSQL = {
+                const INSERT_SID_SQL = {
                     text: 'INSERT INTO sessions (sid, login, role) VALUES ($1, $2, $3)',
                     values: [sid, result.rows[0].login, result.rows[0].role]
                 };
-                pool.query(insertSidSQL)
+                pool.query(INSERT_SID_SQL)
                     .then(result => {
                         console.log(result);
                         res.cookie('sid', sid);

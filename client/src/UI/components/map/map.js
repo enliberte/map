@@ -72,7 +72,7 @@ class DumpMap extends Component {
 
     render() {
         return (
-            <div id="YandexMap" style={{"width": "600px", "height": "400px"}}></div>
+            <div id="YandexMap"></div>
         );
     }
 
