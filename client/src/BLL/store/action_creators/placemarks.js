@@ -1,6 +1,9 @@
 import {actions as a} from "../constants";
 import * as axios from 'axios';
 
+export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
+
+export const cancelNewPlacemark = () => ({type: a.CANCEL_PLACEMARK});
 
 export const setPlacemarksInStore = (data) => ({type: a.SET_PLACEMARKS, payload: data});
 

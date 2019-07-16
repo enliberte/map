@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CreateItemCardForm from './createItemForm/createItemForm';
 import {closeCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
+import {cancelNewPlacemark} from "../../../BLL/store/action_creators/placemarks";
 
 
 class CreateItemCard extends Component {
@@ -40,6 +41,7 @@ const mapDispatchToProps = (dispatch) => {
             console.log(data)
         },
         onClose() {
+            dispatch(cancelNewPlacemark());
             dispatch(closeCreateItemCard());
         }
     }

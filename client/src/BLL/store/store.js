@@ -7,6 +7,7 @@ import authPanel from "./reducers/authPanel";
 import {reducer as formReducer} from 'redux-form';
 import violationTypes from "./reducers/violationTypes";
 import createItemCard from './reducers/createItemCard';
+import newPlacemark from "./reducers/newPlacemark";
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(
@@ -16,6 +17,7 @@ const store = createStoreWithMiddleware(
         authPanel,
         createItemCard,
         violationTypes,
+        newPlacemark,
         form: formReducer
     }),
     initialState,

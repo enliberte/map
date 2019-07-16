@@ -16,7 +16,12 @@ const initialState = {
         'Стихийная свалка',
         'Замусоренная территория',
         'Невывезенные контейнеры'
-    ]
+    ],
+    newPlacemark: {
+        isDisplayed: false,
+        coords: [],
+        address: ''
+    }
 };
 
 export default initialState;
