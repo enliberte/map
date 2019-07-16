@@ -10,7 +10,6 @@ const auth = (pool, params, res) => {
         .then(result => {
             if (result.rows) {
                 const sid = uuid4();
-                console.log(sid, typeof sid);
                 const data = {login: result.rows[0].login, role: result.rows[0].role};
                 const INSERT_SID_SQL = {
                     text: 'INSERT INTO sessions (sid, login, role) VALUES ($1, $2, $3)',
