@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
-import {addNewPlacemark, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
+import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
 import {openCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
 
 
@@ -108,7 +108,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(setPlacemarks());
         },
         onOpenCreateItemCard(coords) {
-            dispatch(addNewPlacemark({coords, address: ''}));
+            dispatch(addNewPlacemarkWithAddress(coords));
             dispatch(openCreateItemCard());
         }
     }
