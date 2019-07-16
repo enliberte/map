@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
 import {setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
+import {openCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
 
 
 class DumpMap extends Component {
@@ -22,6 +23,8 @@ class DumpMap extends Component {
                 center: [55.76, 37.64],
                 zoom: 7
             });
+
+            this.Ymap.events.add('click', () => this.props.onOpenCreateItemCard());
 
             const placemarks = this.props.placemarks.map(placemark => new ymaps.Placemark(
                 [placemark.latitude, placemark.longitude],  {
@@ -89,6 +92,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSetPlacemarks() {
             dispatch(setPlacemarks());
+        },
+        onOpenCreateItemCard() {
+            dispatch(openCreateItemCard());
         }
     }
 };

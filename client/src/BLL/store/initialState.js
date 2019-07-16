@@ -8,7 +8,15 @@ const initialState = {
     },
     authPanel: {
         isDisplayed: false
-    }
+    },
+    createItemCard: {
+        isDisplayed: false
+    },
+    violationTypes: [
+        'Стихийная свалка',
+        'Замусоренная территория',
+        'Невывезенные контейнеры'
+    ]
 };
 
 export default initialState;

@@ -5,6 +5,8 @@ import auth from './reducers/auth';
 import initialState from "./initialState";
 import authPanel from "./reducers/authPanel";
 import {reducer as formReducer} from 'redux-form';
+import violationTypes from "./reducers/violationTypes";
+import createItemCard from './reducers/createItemCard';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(
@@ -12,6 +14,8 @@ const store = createStoreWithMiddleware(
         placemarks,
         auth,
         authPanel,
+        createItemCard,
+        violationTypes,
         form: formReducer
     }),
     initialState,

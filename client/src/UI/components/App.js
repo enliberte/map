@@ -4,6 +4,8 @@ import DumpMap from './map/map';
 import {isAuthorized} from "../../BLL/store/action_creators/auth";
 import Toolbar from "./toolbar/toolbar";
 import AuthPanel from './authPanel/authPanel';
+import CreateItemCard from './createItemCard/createItemCard';
+import './App.module.css';
 
 
 class App extends Component {
@@ -18,6 +20,7 @@ class App extends Component {
                 <Toolbar />
                 <DumpMap />
                 {this.props.authPanelIsDisplayed && <AuthPanel />}
+                {this.props.createItemCardIsDisplayed && <CreateItemCard />}
             </div>
         );
     }
@@ -25,7 +28,8 @@ class App extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        authPanelIsDisplayed: state.authPanel.isDisplayed
+        authPanelIsDisplayed: state.authPanel.isDisplayed,
+        createItemCardIsDisplayed: state.createItemCard.isDisplayed
     }
 };
 
