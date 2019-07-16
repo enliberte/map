@@ -78,19 +78,21 @@ class DumpMap extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.Ymap) {
-            if (this.newPlacemark) {
-                if (this.props.newPlacemark.isDisplayed) {
-                    if (this.props.newPlacemark.coords !== prevProps.newPlacemark.coords) {
+            if (this.props.newPlacemark.isDisplayed) {
+                if (this.props.newPlacemark.coords !== prevProps.newPlacemark.coords) {
+                    if (this.newPlacemark) {
                         this.Ymap.geoObjects.remove(this.newPlacemark);
-                        this.newPlacemark = new ymaps.GeoObject({
-                            geometry: {
-                                type: "Point",
-                                coordinates: this.props.newPlacemark.coords
-                            }
-                        });
-                        this.Ymap.geoObjects.add(this.newPlacemark);
                     }
-                } else {
+                    this.newPlacemark = new ymaps.GeoObject({
+                        geometry: {
+                            type: "Point",
+                            coordinates: this.props.newPlacemark.coords
+                        }
+                    });
+                    this.Ymap.geoObjects.add(this.newPlacemark);
+                }
+            } else {
+                if (this.newPlacemark) {
                     this.Ymap.geoObjects.remove(this.newPlacemark);
                 }
             }
