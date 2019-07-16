@@ -109,7 +109,6 @@ const mapDispatchToProps = (dispatch) => {
         },
         onOpenCreateItemCard(coords) {
             dispatch(addNewPlacemarkWithAddress(coords));
-            dispatch(openCreateItemCard());
         }
     }
 };

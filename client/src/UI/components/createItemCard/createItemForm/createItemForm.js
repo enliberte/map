@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
+import {setNewAddressAndCoords} from "../../../../BLL/store/action_creators/placemarks";
 
 
 class CreateItemForm extends Component {
@@ -9,7 +10,7 @@ class CreateItemForm extends Component {
             <form className="form" onSubmit={this.props.handleSubmit}>
 
                 <div className="input">
-                    <Field className="input__field" component="input" name="address" required />
+                    <Field className="input__field" component="input" name="address" onChange={this.props.onSetAddress} required />
                     <span className="input__bar"></span>
                     <label className="input__label">Введите адрес</label>
                     <i className="material-icons location__icon">location_on</i>
@@ -78,8 +79,18 @@ class CreateItemForm extends Component {
 const mapStateToProps = (state) => {
     return {
         violationTypes: state.violationTypes,
+        initialValues: {coords: state.newPlacemark.coords, address: state.newPlacemark.address}
     }
 };
 
 
-export default reduxForm({form: 'createItemForm'})(connect(mapStateToProps)(CreateItemForm));
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSetAddress(event) {
+            dispatch(setNewAddressAndCoords(event.target.value));
+        }
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({form: 'createItemForm'})(CreateItemForm));

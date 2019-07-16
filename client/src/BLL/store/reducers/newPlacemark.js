@@ -15,6 +15,16 @@ const newPlacemark = (state={}, action) => {
                 ...state,
                 isDisplayed: false
             };
+        case a.SET_NEW_ADDRESS:
+            return {
+                ...state,
+                address: action.payload
+            };
+        case a.SET_NEW_COORDINATES:
+            return {
+                ...state,
+                coords: action.payload
+            };
         default:
             return state;
     }
