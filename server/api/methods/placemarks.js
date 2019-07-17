@@ -1,5 +1,7 @@
 getPlacemarks = require('../sql/placemarks').getPlacemarks;
 insertPlacemark = require('../sql/placemarks').insertPlacemark;
+initializePlacemarkData = require('./helpers').initializePlacemarkData;
+
 
 const getAllPlacemarks = (pool, res) => {
     pool.query('SELECT * FROM placemarks')
@@ -9,13 +11,11 @@ const getAllPlacemarks = (pool, res) => {
 
 
 const savePlacemark = (pool, params, res) => {
-    pool.query(insertPlacemark(params))
+    const data = initializePlacemarkData(params);
+    pool.query(insertPlacemark(data))
         .then(result => {
             console.log(result);
-            params.latitude = coords[0];
-            params.longitude = coords[1];
-            params.state = 'Новая';
-            res.send(params);
+            res.send(data);
         })
         .catch(err => res.status(401).send(err));
 
