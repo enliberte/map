@@ -35,7 +35,6 @@ class DumpMap extends Component {
                     preset: 'islands#icon',
                     iconColor: colors[placemark.state]
                 })
-
             );
             for (let placemark of placemarks) {
                 this.Ymap.geoObjects.add(placemark)
@@ -94,6 +93,25 @@ class DumpMap extends Component {
             } else {
                 if (this.newPlacemark) {
                     this.Ymap.geoObjects.remove(this.newPlacemark);
+                }
+            }
+            if (this.props.placemarks !== prevProps.placemarks) {
+                const addedPlacemarks = this.props.placemarks.filter(
+                    placemark => {
+                        prevProps.placemarks.every(oldPlacemark => oldPlacemark.id !== placemark.id);
+                    }
+                );
+                const placemarks = addedPlacemarks.map(placemark => new ymaps.Placemark(
+                    [placemark.latitude, placemark.longitude],  {
+                        hintContent: placemark.address,
+                        balloonContent: placemark.state
+                    }, {
+                        preset: 'islands#icon',
+                        iconColor: colors[placemark.state]
+                    })
+                );
+                for (let placemark of placemarks) {
+                    this.Ymap.geoObjects.add(placemark)
                 }
             }
         }

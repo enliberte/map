@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/server/api/methods/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/methods/placemarks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/api/sql/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/sql/placemarks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/UI/components/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/map/map.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,15 +26,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/api/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/api/methods/placemarks.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -43,11 +34,53 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/api/methods/helpers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="31" selection-start-column="31" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/newPlacemark.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,41 +99,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/newPlacemark.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemForm/createItemForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="119">
+              <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -155,12 +158,10 @@
         <option value="$PROJECT_DIR$/client/src/BLL/store/store.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/newPlacemark.js" />
         <option value="$PROJECT_DIR$/server/api/auth/auth.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/App.module.css" />
         <option value="$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemForm/createItemForm.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js" />
         <option value="$PROJECT_DIR$/server/api/constants.js" />
         <option value="$PROJECT_DIR$/server/api/api.js" />
@@ -169,6 +170,8 @@
         <option value="$PROJECT_DIR$/server/api/methods/placemarks.js" />
         <option value="$PROJECT_DIR$/server/api/sql/placemarks.js" />
         <option value="$PROJECT_DIR$/server/api/methods/helpers.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
       </list>
     </option>
   </component>
@@ -208,6 +211,39 @@
               <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BLL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="map" type="b2602c69:ProjectViewProjectNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BLL" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="map" type="b2602c69:ProjectViewProjectNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BLL" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="action_creators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="map" type="b2602c69:ProjectViewProjectNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BLL" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="map" type="b2602c69:ProjectViewProjectNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -217,6 +253,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="map" type="b2602c69:ProjectViewProjectNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="createItemCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -332,13 +377,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67893000" />
+    <option name="totallyTimeSpent" value="69677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1366" height="693" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24422933" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -441,7 +486,7 @@
         <state relative-caret-position="323">
           <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <element signature="e#0#68#0" expanded="false" />
+            <element signature="e#0#68#0" />
           </folding>
         </state>
       </provider>
@@ -468,25 +513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/newPlacemark.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -497,33 +527,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -570,6 +573,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/placemarks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/newPlacemark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
         </state>
       </provider>
     </entry>

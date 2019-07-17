@@ -1,7 +1,7 @@
 import {actions as a, API_KEY} from "../constants";
 import * as axios from 'axios';
-import {openCreateItemCard} from "./createItemCard";
-import uuid4 from "uuid4";
+import {closeCreateItemCard, openCreateItemCard} from "./createItemCard";
+
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
 
@@ -25,6 +25,8 @@ export const savePlacemark = (data) => (dispatch) => {
         })
         .then((response) => {
             dispatch(addPlacemarkToStore(response.data));
+            dispatch(closeCreateItemCard());
+            dispatch(cancelNewPlacemark());
         })
         .catch((err) => console.log(err))
 };
