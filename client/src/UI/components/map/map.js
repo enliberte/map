@@ -96,9 +96,10 @@ class DumpMap extends Component {
                 }
             }
             if (this.props.placemarks !== prevProps.placemarks) {
+
                 const addedPlacemarks = this.props.placemarks.filter(
                     placemark => {
-                        prevProps.placemarks.every(oldPlacemark => oldPlacemark.id !== placemark.id);
+                        !prevProps.placemarks.some(oldPlacemark => oldPlacemark.id === placemark.id);
                     }
                 );
                 console.log(addedPlacemarks);
