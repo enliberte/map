@@ -101,6 +101,7 @@ class DumpMap extends Component {
                         prevProps.placemarks.every(oldPlacemark => oldPlacemark.id !== placemark.id);
                     }
                 );
+                console.log(addedPlacemarks);
                 const placemarks = addedPlacemarks.map(placemark => new ymaps.Placemark(
                     [placemark.latitude, placemark.longitude],  {
                         hintContent: placemark.address,
