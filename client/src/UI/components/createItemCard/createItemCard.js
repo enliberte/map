@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CreateItemCardForm from './createItemForm/createItemForm';
 import {closeCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
-import {cancelNewPlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {cancelNewPlacemark, savePlacemark} from "../../../BLL/store/action_creators/placemarks";
 
 
 class CreateItemCard extends Component {
@@ -21,7 +21,7 @@ class CreateItemCard extends Component {
                         </a>
                     </div>
                 </div>
-                <CreateItemCardForm onSubmit={this.props.onSubmit}/>
+                <CreateItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords)}/>
             </section>
         )
     }
@@ -30,15 +30,16 @@ class CreateItemCard extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-
+        coords: state.newPlacemark.coords
     }
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmit(data) {
-            console.log(data)
+        onSubmit(data, coords) {
+            data.coords = coords;
+            dispatch(savePlacemark(data));
         },
         onClose() {
             dispatch(cancelNewPlacemark());

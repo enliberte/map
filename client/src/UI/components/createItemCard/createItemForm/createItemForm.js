@@ -79,7 +79,7 @@ class CreateItemForm extends Component {
 const mapStateToProps = (state) => {
     return {
         violationTypes: state.violationTypes,
-        initialValues: {coords: state.newPlacemark.coords, address: state.newPlacemark.address}
+        initialValues: {address: state.newPlacemark.address}
     }
 };
 

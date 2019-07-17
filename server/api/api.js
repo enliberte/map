@@ -1,6 +1,7 @@
 const auth = require("./methods/auth").auth;
 const isAuthorized = require("./methods/auth").isAuthorized;
 const getAllPlacemarks = require("./methods/placemarks").getAllPlacemarks;
+const savePlacemark = require("./methods/placemarks").savePlacemark;
 const methods = require('./constants').methods;
 const {Pool} = require('pg');
 
@@ -20,6 +21,9 @@ const apiRouter = (req, res) => {
     switch (method) {
         case methods.GET_PLACEMARKS_DATA:
             getAllPlacemarks(pool, res);
+            break;
+        case methods.SAVE_PLACEMARK:
+            savePlacemark(pool, params, res);
             break;
         case methods.AUTH:
             auth(pool, params, res);

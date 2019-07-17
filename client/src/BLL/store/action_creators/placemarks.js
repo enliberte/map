@@ -1,6 +1,7 @@
 import {actions as a, API_KEY} from "../constants";
 import * as axios from 'axios';
 import {openCreateItemCard} from "./createItemCard";
+import uuid4 from "uuid4";
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
 
@@ -11,6 +12,22 @@ export const setPlacemarksInStore = (data) => ({type: a.SET_PLACEMARKS, payload:
 export const setNewCoordinates = (coords) => ({type: a.SET_NEW_COORDINATES, payload: coords});
 
 export const setNewAddress = (address) => ({type: a.SET_NEW_ADDRESS, payload: address});
+
+export const addPlacemarkToStore = (data) => ({type: a.SAVE_PLACEMARK, payload: data});
+
+export const savePlacemark = (data) => (dispatch) => {
+    axios.post('/', {method: 'SAVE_PLACEMARK', params: data})
+        .then((response) => {
+            if (response.status !== 200) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((response) => {
+            dispatch(addPlacemarkToStore(response.data));
+        })
+        .catch((err) => console.log(err))
+};
 
 export const addNewPlacemarkWithAddress = (coords) => (dispatch) => {
     const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=${API_KEY}&geocode=${coords.reverse().join(',')}&results=1`;
