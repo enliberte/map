@@ -96,7 +96,7 @@ class DumpMap extends Component {
 
     removePlacemarks(placemarks) {
         if (placemarks) {
-            const placemarksObj = this.Ymap.geoObjects.getIterator();
+            const placemarksObj = Array.from(this.Ymap.geoObjects.getIterator());
             for (let placemarkObj of placemarksObj) {
                 console.log(placemarkObj.properties.get('id'));
                 // if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
