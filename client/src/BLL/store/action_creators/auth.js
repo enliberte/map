@@ -34,4 +34,5 @@ export const auth = (login, password) => (dispatch) => {
             dispatch(setAuthData(response.data.login, response.data.role));
             dispatch(closeAuthPanel());
         })
+        .catch((err) => {dispatch(showAuthError())})
 };
