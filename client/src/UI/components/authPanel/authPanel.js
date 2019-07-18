@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {auth, setLogin, setPassword} from "../../../BLL/store/action_creators/auth";
+import {auth} from "../../../BLL/store/action_creators/auth";
 import {closeAuthPanel} from "../../../BLL/store/action_creators/authPanel";
+import AuthForm from './authForm/authForm';
 
 
 class AuthPanel extends Component {
