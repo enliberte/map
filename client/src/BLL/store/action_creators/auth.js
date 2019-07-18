@@ -21,6 +21,7 @@ export const isAuthorized = () => (dispatch) => {
 export const auth = (login, password) => (dispatch) => {
     axios.post('/', {method: 'AUTH', params: {login, password}})
         .then((response) => {
+            console.log(response.status);
             if (response.status !== 200) {
                 if (response.status === 401) {
                     dispatch(showAuthError());
