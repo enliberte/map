@@ -37,7 +37,7 @@ class RegForm extends Component {
                     <label className="input__label">Введите пароль повторно</label>
                 </div>
 
-                <input type="submit" className="button button--default" placeholder="Зарегистрироваться"/>
+                <button className="button button--default">Зарегистрироваться</button>
 
             </form>
         )

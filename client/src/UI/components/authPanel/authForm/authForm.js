@@ -19,7 +19,7 @@ class AuthForm extends Component {
                     <label className="input__label">Введите пароль</label>
                 </div>
 
-                <input type="submit" className="button button--default" placeholder="Войти"/>
+                <button className="button button--default">Войти</button>
 
             </form>
         )
