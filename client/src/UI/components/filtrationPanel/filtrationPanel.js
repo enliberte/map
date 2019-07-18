@@ -14,9 +14,6 @@ class FiltrationPanel extends Component {
 
                     <div className="form-header">
                         <h3 className="modal__title">Заявки</h3>
-                        <a href="#" rel="nofollow" className="link link--close">
-                            <i className="material-icons">close</i>
-                        </a>
                     </div>
 
                     <div className="checkbox">
