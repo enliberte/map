@@ -94,6 +94,16 @@ class DumpMap extends Component {
         }
     }
 
+    removePlacemarks(placemarks) {
+        this.Ymap.geoObjects.each(
+            placemarkObj => {
+                if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
+                    this.Ymap.geoObjects.remove(placemarkObj);
+                }
+            }
+        )
+    }
+
     removeNewPlacemark() {
         if (this.newPlacemark) {
             this.Ymap.geoObjects.remove(this.newPlacemark);
@@ -114,7 +124,11 @@ class DumpMap extends Component {
                 const addedPlacemarks = this.props.placemarks.filter(
                     placemark => !prevProps.placemarks.some(oldPlacemark => oldPlacemark.id === placemark.id)
                 );
+                const removedPlacemarks = prevProps.placemarks.filter(
+                    oldPlacemark => !this.props.placemarks.some(newPlacemark => newPlacemark.id === oldPlacemark.id)
+                );
                 this.addPlacemarks(addedPlacemarks);
+                this.removePlacemarks(removedPlacemarks);
             }
         }
     }
