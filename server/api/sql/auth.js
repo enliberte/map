@@ -22,7 +22,15 @@ const insertSession = (sid, login, role) => {
     }
 };
 
+const deleteSession = (sid) => {
+    return {
+        text: 'DELETE FROM sessions WHERE sid=$1',
+        values: [sid]
+    }
+};
+
 
 exports.getUserFromUsers = getUserFromUsers;
 exports.getUserFromSessions = getUserFromSessions;
 exports.insertSession = insertSession;
+exports.deleteSession = deleteSession;

@@ -6,17 +6,10 @@ import {openAuthPanel} from "../../../../BLL/store/action_creators/authPanel";
 class AuthLink extends Component {
     render() {
         return (
-            <a href="#" onClick={this.props.onOpenAuthPanel}>{this.props.text}</a>
+            <a href="#" onClick={this.props.onOpenAuthPanel}>Войти</a>
         )
     }
 }
-
-
-const mapStatesToProps = (state) => {
-    return {
-        text: state.auth.isAuthorized ? state.auth.login : 'Войти'
-    }
-};
 
 
 const mapDispathToProps = (dispatch) => {
@@ -28,4 +21,4 @@ const mapDispathToProps = (dispatch) => {
 };
 
 
-export default connect(mapStatesToProps, mapDispathToProps)(AuthLink);
+export default connect(null, mapDispathToProps)(AuthLink);

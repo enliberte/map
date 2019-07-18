@@ -9,6 +9,13 @@ const auth = (state={}, action) => {
                 login: action.payload.login,
                 role: action.payload.role
             };
+        case a.LOGOUT:
+            return {
+                ...state,
+                isAuthorized: false,
+                login: '',
+                role: ''
+            };
         default:
             return state;
     }

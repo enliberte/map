@@ -5,6 +5,8 @@ import {closeAuthPanel, showAuthError} from './authPanel';
 
 export const setAuthData = (login, role) => ({type: a.SET_AUTH, payload: {login, role}});
 
+export const setLogoutData = () => ({type: a.LOGOUT});
+
 export const isAuthorized = () => (dispatch) => {
     axios.post('/', {method: 'IS_AUTHORIZED'})
         .then((response) => {
@@ -15,6 +17,19 @@ export const isAuthorized = () => (dispatch) => {
         })
         .then((response) => {
             dispatch(setAuthData(response.data.login, response.data.role));
+        })
+};
+
+export const logout = () => (dispatch) => {
+    axios.post('/', {method: 'LOGOUT'})
+        .then((response) => {
+            if (response.status !== 200) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((response) => {
+            dispatch(setLogoutData());
         })
 };
 

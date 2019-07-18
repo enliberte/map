@@ -2,6 +2,7 @@ const uuid4 = require('uuid4');
 getUserFromUsers = require('../sql/auth').getUserFromUsers;
 insertSession = require('../sql/auth').insertSession;
 getUserFromSessions = require('../sql/auth').getUserFromSessions;
+deleteSession = require('../sql/auth').deleteSession;
 
 
 const auth = (pool, params, res) => {
@@ -25,6 +26,30 @@ const auth = (pool, params, res) => {
         .catch(err => res.status(401).send({isAuthorised: false}));
 };
 
+const logout = (pool, req, res) => {
+    if (req.cookies) {
+        if (req.cookies.sid) {
+            pool.query(getUserFromSessions(req.cookies.sid))
+                .then(result => {
+                    if (result.rows) {
+                        pool.query(deleteSession)
+                            .then(result => {
+                                res.clearCookie('sid');
+                                res.send({isAuthorised: false});
+                            })
+                            .catch(err => res.status(401).send(err));
+                    } else {
+                        res.status(401).send({isAuthorised: false});
+                    }
+                })
+                .catch(err => res.status(401).send(err));
+        } else {
+            res.status(401).send({isAuthorised: false});
+        }
+    } else {
+        res.status(401).send({isAuthorised: false});
+    }
+};
 
 const isAuthorized = (pool, req, res) => {
     if (req.cookies) {
@@ -51,3 +76,4 @@ const isAuthorized = (pool, req, res) => {
 
 exports.auth = auth;
 exports.isAuthorized = isAuthorized;
+exports.logout = logout;

@@ -3,6 +3,7 @@ const initialState = {
     auth: {
         isAuthorized: false,
         authError: false,
+        login: '',
         role: ''
     },
     authPanel: {

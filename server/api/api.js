@@ -1,4 +1,5 @@
 const auth = require("./methods/auth").auth;
+const logout = require("./methods/auth").logout;
 const isAuthorized = require("./methods/auth").isAuthorized;
 const getAllPlacemarks = require("./methods/placemarks").getAllPlacemarks;
 const savePlacemark = require("./methods/placemarks").savePlacemark;
@@ -27,6 +28,9 @@ const apiRouter = (req, res) => {
             break;
         case methods.AUTH:
             auth(pool, params, res);
+            break;
+        case methods.LOGOUT:
+            logout(pool, req, res);
             break;
         case methods.IS_AUTHORIZED:
             isAuthorized(pool, req, res);
