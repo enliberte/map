@@ -25,7 +25,7 @@ class DumpMap extends Component {
             });
 
             this.Ymap.events.add('click', (event) => this.props.onOpenCreateItemCard(event.get('coords')));
-            // this.addPlacemarks(this.props.placemarks);
+            this.addPlacemarks(this.props.placemarks);
 
 
             // osme.geoJSON('RU-YAR', {lang: 'ru'}, (data) => {
@@ -97,6 +97,7 @@ class DumpMap extends Component {
     removePlacemarks(placemarks) {
         if (placemarks) {
             const placemarksObj = Array.from(this.Ymap.geoObjects.getIterator());
+            console.log(placemarksObj);
             for (let placemarkObj of placemarksObj) {
                 console.log(placemarkObj.properties.get('id'));
                 // if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
