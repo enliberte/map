@@ -5,7 +5,8 @@ const regPanel = (state={}, action) => {
         case a.OPEN_REG_PANEL:
             return {
                 ...state,
-                isDisplayed: true
+                isDisplayed: true,
+                regError: false
             };
         case a.CLOSE_REG_PANEL:
             return {
