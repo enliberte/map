@@ -23,9 +23,9 @@ const initialState = {
         address: ''
     },
     filters: {
-        'Новые': true,
+        'Новая': true,
         'В работе': true,
-        'Завершенные': true,
+        'Завершенная': true,
         'В архиве': true
     }
 };

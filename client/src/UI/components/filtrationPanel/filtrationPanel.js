@@ -81,7 +81,7 @@ class FiltrationPanel extends Component {
 const mapStateToProps = (state) => {
     return {
         filters: state.filters,
-        placemarks: state.placemarks.filter(placemark => !state.filters[placemark.state])
+        placemarks: state.placemarks.filter(placemark => state.filters[placemark.state])
     }
 };
 
