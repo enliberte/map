@@ -32,7 +32,7 @@ const logout = (pool, req, res) => {
             pool.query(getUserFromSessions(req.cookies.sid))
                 .then(result => {
                     if (result.rows) {
-                        pool.query(deleteSession)
+                        pool.query(deleteSession(req.cookies.sid))
                             .then(result => {
                                 res.clearCookie('sid');
                                 res.send({isAuthorised: false});
