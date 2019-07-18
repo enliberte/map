@@ -96,14 +96,19 @@ class DumpMap extends Component {
 
     removePlacemarks(placemarks) {
         if (placemarks) {
-            const placemarksObj = Array.from(this.Ymap.geoObjects.getIterator());
-            console.log(placemarksObj);
-            for (let placemarkObj of placemarksObj) {
-                console.log(placemarkObj.properties.get('id'));
-                // if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
-                //     this.Ymap.geoObjects.remove(placemarkObj);
-                // }
-            }
+            let placemarksObjToRemove = [];
+            this.Ymap.geoObjects.each(
+                placemarkObj => {
+                    if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
+                        placemarksObjToRemove.push(placemarkObj);
+                    }
+                }
+            );
+            placemarksObjToRemove.forEach(
+                placemarkObj => {
+                    this.Ymap.geoObjects.remove(placemarkObj);
+                }
+            );
         }
     }
 
