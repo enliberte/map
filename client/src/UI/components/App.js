@@ -5,6 +5,7 @@ import {isAuthorized} from "../../BLL/store/action_creators/auth";
 import Toolbar from "./toolbar/toolbar";
 import AuthPanel from './authPanel/authPanel';
 import CreateItemCard from './createItemCard/createItemCard';
+import FiltrationPanel from './filtrationPanel/filtrationPanel';
 import './App.module.css';
 
 
@@ -19,6 +20,7 @@ class App extends Component {
             <div>
                 <Toolbar />
                 <DumpMap />
+                <FiltrationPanel />
                 {this.props.authPanelIsDisplayed && <AuthPanel />}
                 {this.props.createItemCardIsDisplayed && <CreateItemCard />}
             </div>

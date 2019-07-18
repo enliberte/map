@@ -21,6 +21,12 @@ const initialState = {
         isDisplayed: false,
         coords: [],
         address: ''
+    },
+    filters: {
+        'Новые': true,
+        'В работе': true,
+        'Завершенные': true,
+        'В архиве': true
     }
 };
 

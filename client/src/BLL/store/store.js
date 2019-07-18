@@ -8,6 +8,7 @@ import {reducer as formReducer} from 'redux-form';
 import violationTypes from "./reducers/violationTypes";
 import createItemCard from './reducers/createItemCard';
 import newPlacemark from "./reducers/newPlacemark";
+import filters from "./reducers/filtrationPanel";
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(
@@ -18,6 +19,7 @@ const store = createStoreWithMiddleware(
         createItemCard,
         violationTypes,
         newPlacemark,
+        filters,
         form: formReducer
     }),
     initialState,

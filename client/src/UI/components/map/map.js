@@ -137,7 +137,7 @@ class DumpMap extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        placemarks: state.placemarks,
+        placemarks: state.placemarks.filter(placemark => !state.filters[placemark.state]),
         newPlacemark: state.newPlacemark
     }
 };
