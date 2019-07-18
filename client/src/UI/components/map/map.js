@@ -96,6 +96,7 @@ class DumpMap extends Component {
     removePlacemarks(placemarks) {
         this.Ymap.geoObjects.each(
             placemarkObj => {
+                console.log(placemarkObj, placemarkObj.properties.get('id'));
                 if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
                     this.Ymap.geoObjects.remove(placemarkObj);
                 }
@@ -126,7 +127,6 @@ class DumpMap extends Component {
                 const removedPlacemarks = prevProps.placemarks.filter(
                     oldPlacemark => !this.props.placemarks.some(newPlacemark => newPlacemark.id === oldPlacemark.id)
                 );
-                console.log(removedPlacemarks);
                 this.addPlacemarks(addedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
             }
