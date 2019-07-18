@@ -88,7 +88,7 @@ class DumpMap extends Component {
         for (let placemarkObj of placemarksObj) {
             this.Ymap.geoObjects.add(placemarkObj);
             placemarkObj.events.add('click', (event) => {
-                console.log(placemarkObj.get('id'));
+                console.log(placemarkObj.properties.get('id'));
             });
         }
     }
