@@ -74,7 +74,7 @@ class DumpMap extends Component {
         this.Ymap.geoObjects.add(this.newPlacemark);
     }
 
-    addNewPlacemarks(placemarks) {
+    addPlacemarks(placemarks) {
         const placemarksObj = placemarks.map(placemark => new ymaps.Placemark(
             [placemark.latitude, placemark.longitude],  {
                 hintContent: placemark.address,
@@ -90,6 +90,7 @@ class DumpMap extends Component {
             placemarkObj.events.add('click', (event) => {
                 console.log(placemarkObj.properties.get('id'));
             });
+            console.log(this.Ymap.geoObjects);
         }
     }
 
@@ -113,7 +114,7 @@ class DumpMap extends Component {
                 const addedPlacemarks = this.props.placemarks.filter(
                     placemark => !prevProps.placemarks.some(oldPlacemark => oldPlacemark.id === placemark.id)
                 );
-                this.addNewPlacemarks(addedPlacemarks);
+                this.addPlacemarks(addedPlacemarks);
             }
         }
     }
