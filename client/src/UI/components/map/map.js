@@ -25,7 +25,7 @@ class DumpMap extends Component {
             });
 
             this.Ymap.events.add('click', (event) => this.props.onOpenCreateItemCard(event.get('coords')));
-            this.addPlacemarks(this.props.placemarks);
+            // this.addPlacemarks(this.props.placemarks);
 
 
             // osme.geoJSON('RU-YAR', {lang: 'ru'}, (data) => {
@@ -74,34 +74,37 @@ class DumpMap extends Component {
     }
 
     addPlacemarks(placemarks) {
-        const placemarksObj = placemarks.map(placemark => new ymaps.Placemark(
-            [placemark.latitude, placemark.longitude],  {
-                hintContent: placemark.address,
-                balloonContent: placemark.state,
-                id: placemark.id
-            }, {
-                preset: 'islands#icon',
-                iconColor: colors[placemark.state]
-            })
-        );
-        for (let placemarkObj of placemarksObj) {
-            this.Ymap.geoObjects.add(placemarkObj);
-            placemarkObj.events.add('click', (event) => {
-                console.log(placemarkObj.properties.get('id'));
-            });
+        if (placemarks) {
+            const placemarksObj = placemarks.map(placemark => new ymaps.Placemark(
+                [placemark.latitude, placemark.longitude], {
+                    hintContent: placemark.address,
+                    balloonContent: placemark.state,
+                    id: placemark.id
+                }, {
+                    preset: 'islands#icon',
+                    iconColor: colors[placemark.state]
+                })
+            );
+            for (let placemarkObj of placemarksObj) {
+                this.Ymap.geoObjects.add(placemarkObj);
+                placemarkObj.events.add('click', (event) => {
+                    console.log(placemarkObj.properties.get('id'));
+                });
+            }
         }
     }
 
     removePlacemarks(placemarks) {
-        console.log(placemarks);
-        this.Ymap.geoObjects.each(
-            placemarkObj => {
-                console.log(placemarkObj, placemarkObj.properties.get('id'));
-                if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
-                    this.Ymap.geoObjects.remove(placemarkObj);
+        if (placemarks) {
+            this.Ymap.geoObjects.each(
+                placemarkObj => {
+                    console.log(placemarkObj, placemarkObj.properties.get('id'));
+                    if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
+                        this.Ymap.geoObjects.remove(placemarkObj);
+                    }
                 }
-            }
-        )
+            )
+        }
     }
 
     removeNewPlacemark() {
