@@ -21,12 +21,8 @@ export const isAuthorized = () => (dispatch) => {
 export const auth = (login, password) => (dispatch) => {
     axios.post('/', {method: 'AUTH', params: {login, password}})
         .then((response) => {
-            console.log(response.status);
             if (response.status !== 200) {
-                if (response.status === 401) {
-                    dispatch(showAuthError());
-                }
-                throw Error(response.statusText);
+                dispatch(showAuthError());
             }
             return response;
         })
@@ -34,5 +30,4 @@ export const auth = (login, password) => (dispatch) => {
             dispatch(setAuthData(response.data.login, response.data.role));
             dispatch(closeAuthPanel());
         })
-        .catch((err) => {dispatch(showAuthError())})
 };
