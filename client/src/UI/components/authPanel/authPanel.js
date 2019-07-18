@@ -21,10 +21,18 @@ class AuthPanel extends Component {
                     </div>
                 </div>
                 <AuthForm onSubmit={(data) => this.props.onSubmit(data)}/>
+                {this.props.authError && <span>Неверно указаны логин или пароль</span>}
             </section>
         )
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError
+    }
+};
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -40,4 +48,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null, mapDispatchToProps)(AuthPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthPanel);

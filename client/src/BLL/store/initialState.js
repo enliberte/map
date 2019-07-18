@@ -2,8 +2,7 @@ const initialState = {
     placemarks: [],
     auth: {
         isAuthorized: false,
-        login: '',
-        password: '',
+        authError: false,
         role: ''
     },
     authPanel: {

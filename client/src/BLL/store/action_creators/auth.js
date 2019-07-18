@@ -1,6 +1,6 @@
 import {actions as a} from "../constants";
 import * as axios from 'axios';
-import {closeAuthPanel} from './authPanel';
+import {closeAuthPanel, showAuthError} from './authPanel';
 
 
 export const setAuthData = (login, role) => ({type: a.SET_AUTH, payload: {login, role}});
@@ -22,6 +22,9 @@ export const auth = (login, password) => (dispatch) => {
     axios.post('/', {method: 'AUTH', params: {login, password}})
         .then((response) => {
             if (response.status !== 200) {
+                if (response.status === 401) {
+                    dispatch(showAuthError());
+                }
                 throw Error(response.statusText);
             }
             return response;
