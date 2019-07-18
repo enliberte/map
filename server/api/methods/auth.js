@@ -35,6 +35,7 @@ const register = (pool, params, res) => {
                 res.status(401).send({error: 'User exists'});
             } else {
                 const data = initializeRegData(params);
+                console.log(data);
                 pool.query(insertUser(data.login, data.password, data.role))
                     .then(result => {
                         const sid = uuid4();
@@ -44,9 +45,9 @@ const register = (pool, params, res) => {
                                 res.cookie('sid', sid);
                                 res.send(data);
                             })
-                            .catch(err => res.status(401).send(err));
+                            .catch(err => res.status(401).send({error: 'Session insert failed'}));
                     })
-                    .catch(err => res.status(401).send(err));
+                    .catch(err => res.status(401).send({error: 'User insert failed'}));
             }
         })
         .catch(err => res.status(404).send(err));
