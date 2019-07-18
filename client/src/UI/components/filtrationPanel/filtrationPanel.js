@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {
-    setFiltersArchive,
-    setFiltersDone,
-    setFiltersInWork,
-    setFiltersNew
-} from "../../../BLL/store/action_creators/filtrationPanel";
-import {Placemark} from "react-yandex-maps";
+import {setFiltersArchive, setFiltersDone, setFiltersInWork, setFiltersNew}
+from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
 
 

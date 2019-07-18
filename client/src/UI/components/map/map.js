@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
-import {colors} from "../../../BLL/store/constants";
+import {colors, MAP_COORDINATES} from "../../../BLL/store/constants";
 import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
-import {openCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
 
 
 class DumpMap extends Component {
@@ -21,7 +20,7 @@ class DumpMap extends Component {
         ymaps.ready(() => {
 
             this.Ymap = new ymaps.Map("YandexMap", {
-                center: [55.76, 37.64],
+                center: MAP_COORDINATES,
                 zoom: 7
             });
 

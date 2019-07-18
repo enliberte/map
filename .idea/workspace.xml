@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/constants.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/store.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/UI/components/App.js" afterPath="$PROJECT_DIR$/client/src/UI/components/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js" afterPath="$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/UI/components/map/map.js" afterPath="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,39 +32,24 @@
       <file leaf-file-name="placemarks.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="185">
               <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-                <marker date="1563429890033" expanded="true" signature="1147:1160" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1147:1205" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1276:2010" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1458:1605" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1501:1566" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1635:1803" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="1832:1963" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2078:2711" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2279:2426" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2322:2387" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2456:2591" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2846:2993" ph="{...}" />
-                <marker date="1563429890033" expanded="true" signature="2889:2954" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="127" column="75" lean-forward="false" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-459">
+              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -103,11 +86,9 @@
       <file leaf-file-name="filtrationPanel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,8 +106,8 @@
       <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="425">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -159,6 +140,7 @@
       <find>params</find>
       <find>uuid</find>
       <find>geoObjects</find>
+      <find>Placemark</find>
       <find>click</find>
     </findStrings>
   </component>
@@ -204,12 +186,12 @@
         <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/filterPanel.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/filtrationPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/store.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/App.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
       </list>
     </option>
   </component>
@@ -603,12 +585,12 @@
       <workItem from="1563261840977" duration="17179000" />
       <workItem from="1563293034488" duration="4215000" />
       <workItem from="1563358784228" duration="4840000" />
-      <workItem from="1563429946663" duration="5313000" />
+      <workItem from="1563429946663" duration="5615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75956000" />
+    <option name="totallyTimeSpent" value="76258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -648,22 +630,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1563429890033" expanded="true" signature="1147:1160" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1147:1205" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1276:2010" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1458:1605" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1501:1566" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1635:1803" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1832:1963" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2078:2711" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2279:2426" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2322:2387" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2456:2591" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2846:2993" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2889:2954" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -846,45 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1563429890033" expanded="true" signature="1147:1160" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1147:1205" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1276:2010" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1458:1605" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1501:1566" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1635:1803" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="1832:1963" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2078:2711" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2279:2426" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2322:2387" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2456:2591" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2846:2993" ph="{...}" />
-            <marker date="1563429890033" expanded="true" signature="2889:2954" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/filtrationPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/BLL/store/initialState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -903,10 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js">
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -921,21 +849,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/filtrationPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="127" column="75" lean-forward="false" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
+        <state relative-caret-position="119">
+          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="185">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

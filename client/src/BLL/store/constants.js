@@ -39,17 +39,3 @@ export const classes = {
     'Выполнена': 'list__item--welldone',
     'В Архиве': 'list__item--archive'
 };
-
-export const violationTypes = [
-    'Стихийная свалка',
-    'Замусоренная территория',
-    'Невывезенные контейнеры'
-];
-
-export const filters = [
-    'Все',
-    'Новые',
-    'В работе',
-    'Выполненные',
-    'Архив'
-];
