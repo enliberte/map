@@ -1,10 +1,7 @@
 import {actions as a} from "../constants";
 import * as axios from 'axios';
+import {closeAuthPanel} from './authPanel';
 
-
-export const setLogin = login => ({type: a.SET_LOGIN, payload: login});
-
-export const setPassword = password => ({type: a.SET_PASSWORD, payload: password});
 
 export const setAuthData = (login, role) => ({type: a.SET_AUTH, payload: {login, role}});
 
@@ -31,5 +28,6 @@ export const auth = (login, password) => (dispatch) => {
         })
         .then((response) => {
             dispatch(setAuthData(response.data.login, response.data.role));
+            dispatch(closeAuthPanel());
         })
 };

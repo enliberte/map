@@ -1,43 +1,42 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {auth, setLogin, setPassword} from "../../../BLL/store/action_creators/auth";
+import {closeAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 
 
 class AuthPanel extends Component {
     render() {
         return (
-            <form onSubmit={() => this.props.onSubmit(this.props.login, this.props.password)}>
-                <input value={this.props.login} onChange={this.props.onSetLogin} type="text"/>
-                <input value={this.props.password} onChange={this.props.onSetPassword} type="password"/>
-                <input type="submit"/>
-            </form>
+            <section className="modal">
+                <div className="wrapper">
+                    <div className="form-header">
+                        <h3 className="modal__title">
+                            Авторизация
+                        </h3>
+
+                        <a href="#" onClick={this.props.onClose} rel="nofollow" className="link link--close">
+                            <i className="material-icons">close</i>
+                        </a>
+                    </div>
+                </div>
+                <AuthForm onSubmit={(data) => this.props.onSubmit(data)}/>
+            </section>
         )
     }
 }
 
 
-const mapStatesToProps = (state) => {
-    return {
-        login: state.auth.login,
-        password: state.auth.password
-    }
-};
-
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSetLogin() {
-            dispatch(setLogin(event.target.value));
-        },
-        onSetPassword() {
-            dispatch(setPassword(event.target.value));
-        },
-        onSubmit(login, password) {
-            event.preventDefault();
+        onSubmit(authData) {
+            const {login, password} = {...authData};
             dispatch(auth(login, password));
+        },
+        onClose() {
+            dispatch(closeAuthPanel());
         }
     }
 };
 
 
-export default connect(mapStatesToProps, mapDispatchToProps)(AuthPanel);
+export default connect(null, mapDispatchToProps)(AuthPanel);
