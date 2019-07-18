@@ -11,12 +11,12 @@ const filters = (state='', action) => {
         case a.SET_FILTERS_NEW:
             return {
                 ...state,
-                'Новые': action.payload
+                'Новая': action.payload
             };
         case a.SET_FILTERS_DONE:
             return {
                 ...state,
-                'Завершенные': action.payload
+                'Завершенная': action.payload
             };
         case a.SET_FILTERS_IN_WORK:
             return {

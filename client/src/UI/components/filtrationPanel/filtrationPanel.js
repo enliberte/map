@@ -21,7 +21,7 @@ class FiltrationPanel extends Component {
 
                     <div className="checkbox">
                         <input type="checkbox"
-                               checked={this.props.filters['Новые']}
+                               checked={this.props.filters['Новая']}
                                onChange={this.props.onSetFiltersNew}
                                id="checkbox-id-1"
                                className="checkbox__field" />
@@ -39,7 +39,7 @@ class FiltrationPanel extends Component {
 
                     <div className="checkbox">
                         <input type="checkbox"
-                               checked={this.props.filters['Завершенные']}
+                               checked={this.props.filters['Завершенная']}
                                onChange={this.props.onSetFiltersDone}
                                id="checkbox-id-3"
                                className="checkbox__field" />
