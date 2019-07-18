@@ -22,7 +22,7 @@ const auth = (pool, params, res) => {
                 res.status(401).send({isAuthorised: false});
             }
         })
-        .catch(err => res.status(401).send(err));
+        .catch(err => res.status(401).send({isAuthorised: false}));
 };
 
 
