@@ -20,4 +20,14 @@ const initializePlacemarkData = (rawData) => {
     };
 };
 
+
+const initializeRegData = (rawData) => {
+    return {
+        role: 'Гражданин',
+        ...rawData
+    };
+};
+
+
 exports.initializePlacemarkData = initializePlacemarkData;
+exports.initializeRegData = initializeRegData;

@@ -4,6 +4,7 @@ const methods = {
     SAVE_PLACEMARK: 'SAVE_PLACEMARK',
     AUTH: 'AUTH',
     LOGOUT: 'LOGOUT',
+    REGISTER: 'REGISTER',
     IS_AUTHORIZED: 'IS_AUTHORIZED'
 };
 

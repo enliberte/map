@@ -4,6 +4,7 @@ import DumpMap from './map/map';
 import {isAuthorized} from "../../BLL/store/action_creators/auth";
 import Toolbar from "./toolbar/toolbar";
 import AuthPanel from './authPanel/authPanel';
+import RegPanel from './regPanel/regPanel';
 import CreateItemCard from './createItemCard/createItemCard';
 import FiltrationPanel from './filtrationPanel/filtrationPanel';
 import './App.module.css';
@@ -22,6 +23,7 @@ class App extends Component {
                 <DumpMap />
                 <FiltrationPanel />
                 {this.props.authPanelIsDisplayed && <AuthPanel />}
+                {this.props.regPanelIsDisplayed && <RegPanel />}
                 {this.props.createItemCardIsDisplayed && <CreateItemCard />}
             </div>
         );
@@ -31,6 +33,7 @@ class App extends Component {
 const mapStatesToProps = (state) => {
     return {
         authPanelIsDisplayed: state.authPanel.isDisplayed,
+        regPanelIsDisplayed: state.regPanel.isDisplayed,
         createItemCardIsDisplayed: state.createItemCard.isDisplayed
     }
 };

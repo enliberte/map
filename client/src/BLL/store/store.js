@@ -9,6 +9,9 @@ import violationTypes from "./reducers/violationTypes";
 import createItemCard from './reducers/createItemCard';
 import newPlacemark from "./reducers/newPlacemark";
 import filters from "./reducers/filtrationPanel";
+import regPanel from "./reducers/regPanel";
+import roles from './reducers/roles';
+
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(
@@ -16,10 +19,12 @@ const store = createStoreWithMiddleware(
         placemarks,
         auth,
         authPanel,
+        regPanel,
         createItemCard,
         violationTypes,
         newPlacemark,
         filters,
+        roles,
         form: formReducer
     }),
     initialState,

@@ -9,6 +9,10 @@ const initialState = {
     authPanel: {
         isDisplayed: false
     },
+    regPanel: {
+        isDisplayed: false,
+        regError: false
+    },
     createItemCard: {
         isDisplayed: false
     },
@@ -27,7 +31,12 @@ const initialState = {
         'В работе': true,
         'Завершенная': true,
         'В архиве': true
-    }
+    },
+    roles: [
+        'Гражданин',
+        'Оператор',
+        'Агент'
+    ]
 };
 
 export default initialState;

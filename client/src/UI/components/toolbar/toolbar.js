@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AuthLink from './authLink/authLink';
+import RegLink from './regLink/regLink';
 import LogoutLink from './logoutLink/logoutLink';
 import {connect} from 'react-redux';
 
@@ -11,6 +12,7 @@ class Toolbar extends Component {
                 {!this.props.isAuthorized &&
                     <div>
                         <AuthLink />
+                        <RegLink />
                     </div>
                 }
                 {this.props.isAuthorized &&
