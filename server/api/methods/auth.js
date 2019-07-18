@@ -31,7 +31,7 @@ const auth = (pool, params, res) => {
 const register = (pool, params, res) => {
     pool.query(getUserFromUsers(params.login, params.password))
         .then(result => {
-            if (result.rows) {
+            if (result.rows.length > 0) {
                 res.status(401).send({error: 'User exists', rows: result.rows});
             } else {
                 const data = initializeRegData(params);
