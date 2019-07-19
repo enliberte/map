@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
 import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
+import {openAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 
 
 class DumpMap extends Component {
@@ -148,6 +149,7 @@ class DumpMap extends Component {
 
 const mapStatesToProps = (state) => {
     return {
+        auth: state.auth,
         coords: [state.map.latitude, state.map.longitude],
         placemarks: state.placemarks.filter(placemark => state.filters[placemark.state]),
         newPlacemark: state.newPlacemark
@@ -160,7 +162,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(setPlacemarks());
         },
         onOpenCreateItemCard(coords) {
-            dispatch(addNewPlacemarkWithAddress(coords));
+            if (this.props.auth.isAuthorised) {
+                dispatch(addNewPlacemarkWithAddress(coords));
+            } else {
+                dispatch(openAuthPanel());
+            }
         }
     }
 };
