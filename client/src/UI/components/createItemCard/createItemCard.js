@@ -38,8 +38,9 @@ const mapStatesToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmit(data, coords) {
+        onSubmit(data, coords, login) {
             data.coords = coords;
+            data.login = login;
             dispatch(savePlacemark(data));
         },
         onClose() {
