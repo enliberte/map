@@ -16,6 +16,9 @@ const initializePlacemarkData = (rawData) => {
         plastic: false,
         violationType: 'Стихийная свалка',
         state: 'Новая',
+        administration: '',
+        price: 0,
+        level: 5,
         ...rawData
     };
 };

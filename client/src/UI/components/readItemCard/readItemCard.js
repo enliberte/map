@@ -9,6 +9,18 @@ import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard
 
 
 class ReadItemCard extends Component {
+    getTrashTypesStr(placemark) {
+        let trashTypes = [];
+        trashTypes.push(placemark.construction ? 'Строительный мусор': false);
+        trashTypes.push(placemark.glass ? 'Стекло': false);
+        trashTypes.push(placemark.household ? 'Бытовые отходы': false);
+        trashTypes.push(placemark.paper ? 'Бумага': false);
+        trashTypes.push(placemark.paper ? 'Пластик': false);
+        trashTypes.push(placemark.household ? 'Металл': false);
+        trashTypes.push(placemark.other ? 'Прочее': false);
+        return trashTypes.filter(trashType => trashType).join(', ');
+    }
+
     render() {
         return (
             <section id="" className="modal">
@@ -16,7 +28,7 @@ class ReadItemCard extends Component {
 
                     <div className="form-header">
                         <h3 className="modal__title">
-                            Заявка
+                            Заявка от {this.props.placemark.author}
                         </h3>
                         <a href="#" rel="nofollow" className="link link--close" onClick={this.props.onClose}>
                             <i className="material-icons">close</i>
@@ -28,7 +40,11 @@ class ReadItemCard extends Component {
                     </h3>
 
                     <ul className="list list--information">
-                        <li>{this.props.placemark.violationtype}</li>
+                        <li>Тип нарушения: {this.props.placemark.violationtype}</li>
+                        {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
+                        {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
+                        {this.props.placemark.level && <li>Угроза: {this.props.placemark.level}</li>}
+                        {this.props.placemark.price && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
                     </ul>
 
                     {this.props.placemark.comment &&
