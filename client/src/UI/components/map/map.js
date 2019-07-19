@@ -139,7 +139,7 @@ class DumpMap extends Component {
                 this.removePlacemarks(removedPlacemarks);
             }
             if (this.props.coords !== prevProps.coords) {
-                this.Ymap.setCenter(this.props.coords, 10);
+                this.Ymap.setCenter(this.props.coords, 16);
             }
         }
     }
