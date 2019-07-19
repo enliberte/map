@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {setFiltersArchive, setFiltersDone, setFiltersInWork, setFiltersNew}
 from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
+import {setPosition} from "../../../BLL/store/action_creators/map";
 
 
 class FiltrationPanel extends Component {
@@ -58,7 +59,9 @@ class FiltrationPanel extends Component {
                     <ul className="list">
                         {this.props.placemarks.map(
                             placemark => (
-                                <li className={`list__item ${classes[placemark.state]}`}>
+                                <li
+                                    className={`list__item ${classes[placemark.state]}`}
+                                    onClick={() => this.props.onSetPosition(placemark.latitude, placemark.longitude)}>
                                     <i className="list__indicator"></i>
                                     <a href="#" className="list__link">{placemark.address}
                                         <i className="material-icons list__item-icon">chevron_right</i>
@@ -97,6 +100,9 @@ const mapDispatchToProps = (dispatch) => {
         onSetFiltersArchive(event) {
             dispatch(setFiltersArchive(event.target.checked));
         },
+        onSetPosition(latitude, longitude) {
+            dispatch(setPosition(latitude, longitude));
+        }
     }
 };
 

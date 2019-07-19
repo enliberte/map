@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
-import {colors, MAP_COORDINATES} from "../../../BLL/store/constants";
+import {colors} from "../../../BLL/store/constants";
 import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
 
 
@@ -20,7 +20,7 @@ class DumpMap extends Component {
         ymaps.ready(() => {
 
             this.Ymap = new ymaps.Map("YandexMap", {
-                center: MAP_COORDINATES,
+                center: this.props.coords,
                 zoom: 7
             });
 
@@ -138,6 +138,9 @@ class DumpMap extends Component {
                 this.addPlacemarks(addedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
             }
+            if (this.props.coords !== prevProps.coords) {
+                this.Ymap.setCenter(this.props.coords, 10);
+            }
         }
     }
 }
@@ -145,6 +148,7 @@ class DumpMap extends Component {
 
 const mapStatesToProps = (state) => {
     return {
+        coords: [state.map.latitude, state.map.longitude],
         placemarks: state.placemarks.filter(placemark => state.filters[placemark.state]),
         newPlacemark: state.newPlacemark
     }

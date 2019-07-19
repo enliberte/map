@@ -1,5 +1,9 @@
 const initialState = {
     placemarks: [],
+    map: {
+        latitude: 57.626578,
+        longitude: 39.893858
+    },
     auth: {
         isAuthorized: false,
         authError: false,

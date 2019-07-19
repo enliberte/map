@@ -11,6 +11,7 @@ import newPlacemark from "./reducers/newPlacemark";
 import filters from "./reducers/filtrationPanel";
 import regPanel from "./reducers/regPanel";
 import roles from './reducers/roles';
+import map from './reducers/map';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
@@ -25,6 +26,7 @@ const store = createStoreWithMiddleware(
         newPlacemark,
         filters,
         roles,
+        map,
         form: formReducer
     }),
     initialState,
