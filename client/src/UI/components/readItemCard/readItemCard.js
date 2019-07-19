@@ -23,25 +23,26 @@ class ReadItemCard extends Component {
                         </a>
                     </div>
 
+                    <h3 className="application__title">
+                        {this.props.placemark.address}
+                    </h3>
+
+                    <ul className="list list--information">
+                        <li>{this.props.placemark.violationtype}</li>
+                    </ul>
+
+                    {this.props.placemark.comment &&
+                    <div className="application__comments">
+                        <p className="application__comments-label">Комментарий</p>
+                        <p className="application__comments-text">{this.props.placemark.comment}</p>
+                    </div>}
+
                     {this.props.auth.isAuthorized &&
                     <div className="form-information">
                         <button className="button button--info">
                             Редактировать
                         </button>
                     </div>}
-
-                    <h3 className="application__title">
-                        {this.props.placemark.address}
-                    </h3>
-
-                    <ul className="list list--information">
-                        <li>{this.props.placemark.violationType}</li>
-                    </ul>
-
-                    <div className="application__comments">
-                        <p className="application__comments-label">Комментарий</p>
-                        <p className="application__comments-text">{this.props.placemark.comment}</p>
-                    </div>
 
                     {this.props.auth.role === 'Оператор' &&
                     <button className="button button--default button--success">
