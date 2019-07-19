@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/constants.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/BLL/store/store.js" afterPath="$PROJECT_DIR$/client/src/BLL/store/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/UI/components/map/map.js" afterPath="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/UI/components/App.js" afterPath="$PROJECT_DIR$/client/src/UI/components/App.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,16 +35,6 @@
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="initialState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/initialState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,11 +99,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1007">
-              <caret line="180" column="35" lean-forward="true" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
+            <state relative-caret-position="429">
+              <caret line="146" column="25" lean-forward="false" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -201,7 +200,6 @@
         <option value="$PROJECT_DIR$/client/src/UI/components/filtrationPanel/filtrationPanel.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/toolbar/authLink/authLink.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/authPanel/authPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/App.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/App.module.css" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/currentPlacemark.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/currentPlacemark.js" />
@@ -212,6 +210,7 @@
         <option value="$PROJECT_DIR$/client/src/BLL/store/store.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/map/map.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/App.js" />
       </list>
     </option>
   </component>
@@ -681,12 +680,12 @@
       <workItem from="1563261840977" duration="17179000" />
       <workItem from="1563293034488" duration="4215000" />
       <workItem from="1563358784228" duration="4840000" />
-      <workItem from="1563429946663" duration="34168000" />
+      <workItem from="1563429946663" duration="34263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104811000" />
+    <option name="totallyTimeSpent" value="104906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -979,16 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/toolbar/authLink/authLink.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1129,8 +1118,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/map/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="180" column="35" lean-forward="true" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
+        <state relative-caret-position="429">
+          <caret line="146" column="25" lean-forward="false" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
