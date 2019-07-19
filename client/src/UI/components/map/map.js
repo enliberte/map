@@ -26,7 +26,7 @@ class DumpMap extends Component {
             });
 
             this.Ymap.events.add('click',
-                (event) => this.props.onOpenCreateItemCard(this.props.auth.isAuthorized, event.get('coords'))
+                (event) => this.clickOnMap(event.get('coords'))
             );
             this.addPlacemarks(this.props.placemarks);
 
@@ -64,6 +64,10 @@ class DumpMap extends Component {
         return (
             <div id="YandexMap"></div>
         );
+    }
+
+    clickOnMap(coords) {
+        this.props.onClickOnMap(this.props.auth.isAuthorized, coords);
     }
 
     createPlacemark() {
@@ -163,7 +167,7 @@ const mapDispatchToProps = (dispatch) => {
         onSetPlacemarks() {
             dispatch(setPlacemarks());
         },
-        onOpenCreateItemCard(isAuthorized, coords) {
+        onClickOnMap(isAuthorized, coords) {
             if (isAuthorized) {
                 dispatch(addNewPlacemarkWithAddress(coords));
             } else {
