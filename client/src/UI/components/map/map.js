@@ -25,7 +25,9 @@ class DumpMap extends Component {
                 zoom: 7
             });
 
-            this.Ymap.events.add('click', (event) => this.props.onOpenCreateItemCard(event.get('coords')));
+            this.Ymap.events.add('click',
+                (event) => this.props.onOpenCreateItemCard(this.props.auth.isAuthorised, event.get('coords'))
+            );
             this.addPlacemarks(this.props.placemarks);
 
 
@@ -161,8 +163,8 @@ const mapDispatchToProps = (dispatch) => {
         onSetPlacemarks() {
             dispatch(setPlacemarks());
         },
-        onOpenCreateItemCard(coords) {
-            if (this.props.auth.isAuthorised) {
+        onOpenCreateItemCard(isAuthorised, coords) {
+            if (isAuthorised) {
                 dispatch(addNewPlacemarkWithAddress(coords));
             } else {
                 dispatch(openAuthPanel());
