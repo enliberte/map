@@ -6,7 +6,7 @@ import {openAuthPanel} from "../../../../BLL/store/action_creators/authPanel";
 class AuthLink extends Component {
     render() {
         return (
-            <a href="#" onClick={this.props.onOpenAuthPanel}>Войти</a>
+            <a href="#" onClick={this.props.onOpenAuthPanel} className="nav-link">Войти</a>
         )
     }
 }
