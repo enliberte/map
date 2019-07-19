@@ -4,6 +4,8 @@ import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
 import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
 import {openAuthPanel} from "../../../BLL/store/action_creators/authPanel";
+import {setCurrentPlacemark} from "../../../BLL/store/action_creators/currentPlacemark";
+import {openReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
 
 
 class DumpMap extends Component {
@@ -94,9 +96,9 @@ class DumpMap extends Component {
             );
             for (let placemarkObj of placemarksObj) {
                 this.Ymap.geoObjects.add(placemarkObj);
-                placemarkObj.events.add('click', (event) => {
-                    console.log(placemarkObj.properties.get('id'));
-                });
+                placemarkObj.events.add('click', (event) => this.props.onClickOnPlacemark(
+                    placemarkObj.properties.get('id'))
+                );
             }
         }
     }
@@ -173,6 +175,10 @@ const mapDispatchToProps = (dispatch) => {
             } else {
                 dispatch(openAuthPanel());
             }
+        },
+        onClickOnPlacemark(id) {
+            dispatch(setCurrentPlacemark(id));
+            dispatch(openReadItemCard());
         }
     }
 };

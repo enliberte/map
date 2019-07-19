@@ -1,5 +1,6 @@
 const initialState = {
     placemarks: [],
+    currentPlacemark: '',
     map: {
         latitude: 57.626578,
         longitude: 39.893858
@@ -18,6 +19,9 @@ const initialState = {
         regError: false
     },
     createItemCard: {
+        isDisplayed: false
+    },
+    readItemCard: {
         isDisplayed: false
     },
     violationTypes: [
