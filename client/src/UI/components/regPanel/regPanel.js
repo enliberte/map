@@ -38,9 +38,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit(regData) {
-            const {login, password, passwordRepeat} = {...regData};
+            const {login, password, passwordRepeat, role} = {...regData};
             if (password === passwordRepeat) {
-                dispatch(register(login, password));
+                dispatch(register(login, password, role));
             } else {
                 dispatch(showRegError());
             }

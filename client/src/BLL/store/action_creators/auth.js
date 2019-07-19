@@ -48,8 +48,8 @@ export const auth = (login, password) => (dispatch) => {
         })
 };
 
-export const register = (login, password) => (dispatch) => {
-    axios.post('/', {method: 'REGISTER', params: {login, password}})
+export const register = (login, password, role) => (dispatch) => {
+    axios.post('/', {method: 'REGISTER', params: {login, password, role}})
         .then((response) => {
             if (response.status !== 200) {
                 dispatch(showRegError());
