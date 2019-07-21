@@ -62,7 +62,7 @@ const updatePlacemark = (data) => {
 
 const delPlacemark = (id) => {
     return {
-        text: 'DELETE FROM placemarks WHERE sid=$1',
+        text: 'DELETE FROM placemarks WHERE id=$1',
         values: [id]
     }
 };

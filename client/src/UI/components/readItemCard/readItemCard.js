@@ -41,37 +41,39 @@ class ReadItemCard extends Component {
                         {this.props.placemark.address}
                     </h3>
 
-                    <ul className="list list--information">
-                        <li>Тип нарушения: {this.props.placemark.violationtype}</li>
-                        {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
-                        {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
-                        {this.props.placemark.level > 0 && <li>Угроза: {this.props.placemark.level}</li>}
-                        {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
-                    </ul>
-
-                    {this.props.placemark.comment &&
-                    <div className="application__comments">
-                        <p className="application__comments-label">Комментарий</p>
-                        <p className="application__comments-text">{this.props.placemark.comment}</p>
-                    </div>}
-
-                    {this.props.auth.isAuthorized &&
                     <div className="form-information">
-                        <button
-                            className="button button--delete"
-                            onClick={() => this.props.onEditPlacemark(this.props.placemark)}>
-                            Редактировать
-                        </button>
-                    </div>}
+                        <ul className="list list--information">
+                            <li>Тип нарушения: {this.props.placemark.violationtype}</li>
+                            {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
+                            {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
+                            {this.props.placemark.level > 0 && <li>Угроза: {this.props.placemark.level}</li>}
+                            {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
+                        </ul>
 
-                    {this.props.auth.isAuthorized &&
-                    <div className="form-information">
-                        <button
-                            className="button button--danger"
-                            onClick={() => this.props.onDeletePlacemark(this.props.placemark.id)}>
-                            Удалить
-                        </button>
-                    </div>}
+                        {this.props.placemark.comment &&
+                        <div className="application__comments">
+                            <p className="application__comments-label">Комментарий</p>
+                            <p className="application__comments-text">{this.props.placemark.comment}</p>
+                        </div>}
+
+                        {this.props.auth.isAuthorized &&
+                        <div className="form-information">
+                            <button
+                                className="button button--delete"
+                                onClick={() => this.props.onEditPlacemark(this.props.placemark)}>
+                                Редактировать
+                            </button>
+                        </div>}
+
+                        {this.props.auth.isAuthorized &&
+                        <div className="form-information">
+                            <button
+                                className="button button--danger"
+                                onClick={() => this.props.onDeletePlacemark(this.props.placemark.id)}>
+                                Удалить
+                            </button>
+                        </div>}
+                    </div>
 
                     {this.props.auth.role === 'Оператор' &&
                     <button className="button button--default button--success">
