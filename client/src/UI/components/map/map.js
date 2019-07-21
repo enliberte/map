@@ -107,9 +107,13 @@ class DumpMap extends Component {
         if (placemarks) {
             this.Ymap.geoObjects.each(
                 placemarkObj => {
-                    if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
-                        placemarkObj.setCoordinates([placemark.latitude, placemark.longitude]);
-                    }
+                    placemarks.forEach(
+                        placemark => {
+                            if (placemark.id === placemarkObj.properties.get('id')) {
+                                placemarkObj.setCoordinates([placemark.latitude, placemark.longitude]);
+                            }
+                        }
+                    );
                 }
             );
         }
@@ -165,7 +169,6 @@ class DumpMap extends Component {
                         oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== placemark.latitude || oldPlacemark.longitude !== placemark.longitude)
                     ))
                 );
-                console.log(updatedPlacemarks);
                 this.addPlacemarks(addedPlacemarks);
                 this.updatePlacemarks(updatedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
