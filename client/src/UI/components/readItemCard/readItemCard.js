@@ -44,7 +44,7 @@ class ReadItemCard extends Component {
                         {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
                         {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
                         {this.props.placemark.level && <li>Угроза: {this.props.placemark.level}</li>}
-                        {this.props.placemark.price && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
+                        {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
                     </ul>
 
                     {this.props.placemark.comment &&
