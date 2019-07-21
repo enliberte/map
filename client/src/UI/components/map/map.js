@@ -165,7 +165,7 @@ class DumpMap extends Component {
                         oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== oldPlacemark.latitude || oldPlacemark.longitude !== oldPlacemark.longitude)
                     ))
                 );
-                console.log(this.updatePlacemarks);
+                console.log(updatedPlacemarks);
                 this.addPlacemarks(addedPlacemarks);
                 this.updatePlacemarks(updatedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
