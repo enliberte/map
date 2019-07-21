@@ -20,6 +20,8 @@ export const setNewAddress = (address) => ({type: a.SET_NEW_ADDRESS, payload: ad
 
 export const addPlacemarkToStore = (data) => ({type: a.SAVE_PLACEMARK, payload: data});
 
+export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payload: data});
+
 export const deletePlacemarkFromStore = (id) => ({type: a.DELETE_PLACEMARK, payload: id});
 
 export const savePlacemark = (data) => (dispatch) => {
@@ -47,8 +49,7 @@ export const updatePlacemark = (data) => (dispatch) => {
             return response;
         })
         .then((response) => {
-            dispatch(deletePlacemarkFromStore(response.data.id));
-            dispatch(addPlacemarkToStore(response.data));
+            dispatch(updatePlacemarkInStore(response.data));
             dispatch(closeEditItemCard());
         })
         .catch((err) => console.log(err))

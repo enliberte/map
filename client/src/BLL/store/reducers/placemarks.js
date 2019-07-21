@@ -10,6 +10,11 @@ const placemarks = (state=[], action) => {
                 ...state,
                 action.payload
             ];
+        case a.UPDATE_PLACEMARK:
+            return [
+                ...state.filter(placemark => placemark.id !== action.payload.id),
+                action.payload
+            ];
         case a.DELETE_PLACEMARK:
             return state.filter(placemark => placemark.id !== action.payload);
         default:

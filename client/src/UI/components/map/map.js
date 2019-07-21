@@ -103,6 +103,18 @@ class DumpMap extends Component {
         }
     }
 
+    updatePlacemarks(placemarks) {
+        if (placemarks) {
+            this.Ymap.geoObjects.each(
+                placemarkObj => {
+                    if (placemarks.some(placemark => placemark.id === placemarkObj.properties.get('id'))) {
+                        placemarkObj.setCoordinates([placemark.latitude, placemark.longitude]);
+                    }
+                }
+            );
+        }
+    }
+
     removePlacemarks(placemarks) {
         if (placemarks) {
             let placemarksObjToRemove = [];
@@ -148,7 +160,14 @@ class DumpMap extends Component {
                         newPlacemark.id === oldPlacemark.id
                     ))
                 );
+                const updatedPlacemarks = this.props.placemarks.filter(
+                    placemark => prevProps.placemarks.some(oldPlacemark => (
+                        oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== oldPlacemark.latitude || oldPlacemark.longitude !== oldPlacemark.longitude)
+                    ))
+                );
+                console.log(this.updatePlacemarks);
                 this.addPlacemarks(addedPlacemarks);
+                this.updatePlacemarks(updatedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
             }
             if (this.props.coords !== prevProps.coords) {
