@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit(data) {
             dispatch(updatePlacemark(data));
+            dispatch(closeInWorkItemCard());
         },
         onClose() {
             dispatch(closeInWorkItemCard());

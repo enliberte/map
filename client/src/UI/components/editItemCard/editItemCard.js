@@ -41,6 +41,7 @@ const mapDispatchToProps = (dispatch) => {
             data.latitude = latitude;
             data.longitude = longitude;
             dispatch(updatePlacemark(data));
+            dispatch(closeEditItemCard());
         },
         onClose() {
             dispatch(closeEditItemCard());

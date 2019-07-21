@@ -53,7 +53,6 @@ export const updatePlacemark = (data) => (dispatch) => {
         })
         .then((response) => {
             dispatch(updatePlacemarkInStore(response.data));
-            dispatch(closeEditItemCard());
         })
         .catch((err) => console.log(err))
 };
