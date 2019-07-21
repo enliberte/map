@@ -200,7 +200,7 @@ const mapDispatchToProps = (dispatch) => {
         onClickOnMap(isAuthorized, coords) {
             if (isAuthorized) {
                 dispatch(addNewPlacemarkWithAddress(coords));
-                dispatch(setPosition(coords[0], coords[1]));
+                dispatch(setPosition(coords[1], coords[0]));
             } else {
                 dispatch(openAuthPanel());
             }
