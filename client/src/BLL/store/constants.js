@@ -22,6 +22,8 @@ export const actions = {
     CLOSE_CREATE_ITEM_CARD: 'CLOSE_CREATE_ITEM_CARD',
     OPEN_READ_ITEM_CARD: 'OPEN_READ_ITEM_CARD',
     CLOSE_READ_ITEM_CARD: 'CLOSE_READ_ITEM_CARD',
+    OPEN_EDIT_ITEM_CARD: 'OPEN_EDIT_ITEM_CARD',
+    CLOSE_EDIT_ITEM_CARD: 'CLOSE_EDIT_ITEM_CARD',
     SET_FILTERS_ARCHIVE: 'SET_FILTERS_ARCHIVE',
     SET_FILTERS_IN_WORK: 'SET_FILTERS_IN_WORK',
     SET_FILTERS_NEW: 'SET_FILTERS_NEW',
@@ -29,12 +31,6 @@ export const actions = {
     SET_POSITION: 'SET_POSITION'
 };
 
-export const urls = {
-    GET_PLACEMARKS_URL: 'http://3wi.sytes.net/map',
-    SAVE_PLACEMARK_URL: 'http://3wi.sytes.net/save'
-};
-
-export const MAP_COORDINATES = [57.626578, 39.893858];
 export const API_KEY = '10b6dcd2-f872-4994-99fe-598c020ae4dd';
 
 export const colors = {

@@ -15,6 +15,7 @@ import map from './reducers/map';
 import currentPlacemark from "./reducers/currentPlacemark";
 import editedPlacemark from './reducers/editedPlacemark';
 import readItemCard from "./reducers/readItemCard";
+import editItemCard from './reducers/editItemCard';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
@@ -33,6 +34,7 @@ const store = createStoreWithMiddleware(
         currentPlacemark,
         editedPlacemark,
         readItemCard,
+        editItemCard,
         form: formReducer
     }),
     initialState,

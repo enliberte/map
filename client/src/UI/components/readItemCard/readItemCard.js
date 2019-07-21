@@ -7,6 +7,7 @@ import {classes, colors as c} from "../../../BLL/store/constants";
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
 import {setEditedPlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {openEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 
 
 class ReadItemCard extends Component {
@@ -88,6 +89,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onEditPlacemark(placemark) {
             dispatch(setEditedPlacemark(placemark));
+            dispatch(openEditItemCard());
         },
         onClose() {
             dispatch(closeReadItemCard());

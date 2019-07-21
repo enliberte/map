@@ -25,6 +25,9 @@ const initialState = {
     readItemCard: {
         isDisplayed: false
     },
+    editItemCard: {
+        isDisplayed: false
+    },
     violationTypes: [
         'Стихийная свалка',
         'Замусоренная территория',

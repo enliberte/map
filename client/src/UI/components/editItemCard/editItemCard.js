@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import CreateItemCardForm from './editItemForm/editItemForm';
-import {closeCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
+import EditItemCardForm from './editItemForm/editItemForm';
+import {closeEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 import {cancelNewPlacemark, savePlacemark} from "../../../BLL/store/action_creators/placemarks";
 
 
@@ -20,7 +20,7 @@ class EditItemCard extends Component {
                         </a>
                     </div>
                 </div>
-                <CreateItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords, this.props.login)}/>
+                <EditItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords, this.props.login)}/>
             </section>
         )
     }
@@ -43,8 +43,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(savePlacemark(data));
         },
         onClose() {
-            dispatch(cancelNewPlacemark());
-            dispatch(closeCreateItemCard());
+            dispatch(closeEditItemCard());
         }
     }
 };
