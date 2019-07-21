@@ -1,8 +1,9 @@
 import {actions as a, API_KEY} from "../constants";
 import * as axios from 'axios';
 import {closeCreateItemCard, openCreateItemCard} from "./createItemCard";
-import {closeEditItemCard} from "./editItemCard";
+import {change} from "redux-form";
 import {closeReadItemCard} from "./readItemCard";
+import {setPosition} from "./map";
 
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
@@ -20,8 +21,6 @@ export const setPlacemarksInStore = (data) => ({type: a.SET_PLACEMARKS, payload:
 export const setNewCoordinates = (coords) => ({type: a.SET_NEW_COORDINATES, payload: coords});
 
 export const setEditedCoordinates = (coords) => ({type: a.EDIT_COORDINATES, payload: coords});
-
-export const setNewAddress = (address) => ({type: a.SET_NEW_ADDRESS, payload: address});
 
 export const addPlacemarkToStore = (data) => ({type: a.SAVE_PLACEMARK, payload: data});
 
@@ -96,7 +95,7 @@ export const addNewPlacemarkWithAddress = (coords) => (dispatch) => {
 
 export const setNewAddressAndCoords = (address) => (dispatch) => {
     const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=${API_KEY}&geocode=${address}&results=1`;
-    dispatch(setNewAddress(address));
+    dispatch(change('createItemForm', 'address', address));
     axios.get(url)
         .then((response) => {
             if (response.status !== 200) {
@@ -107,7 +106,10 @@ export const setNewAddressAndCoords = (address) => (dispatch) => {
         .then((response) => {
             return response.data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').map(c => +c);
         })
-        .then((coords) => dispatch(setNewCoordinates(coords.reverse())))
+        .then((coords) => {
+            dispatch(setNewCoordinates(coords.reverse()));
+            dispatch(setPosition(coords[0], coords[1]));
+        })
         .catch((err) => {console.log(err)})
 };
 
