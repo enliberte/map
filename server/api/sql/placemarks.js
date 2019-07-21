@@ -7,8 +7,8 @@ const insertPlacemark = (data) => {
     return {
         text: 'INSERT INTO placemarks (id, address, latitude, longitude, comment, construction, ' +
                                       'glass, household, metal, other, paper, plastic, violationtype, ' +
-                                      'state, administration, price, level, author) ' +
-              'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)',
+                                      'state, administration, price, level, author, volume, square) ' +
+              'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)',
         values: [
             data.id,
             data.address,
@@ -27,7 +27,9 @@ const insertPlacemark = (data) => {
             data.administration,
             data.price,
             data.level,
-            data.author
+            data.author,
+            data.volume,
+            data.square
         ]
     };
 };
@@ -37,7 +39,7 @@ const updatePlacemark = (data) => {
     return {
         text: 'UPDATE placemarks SET address=$1, latitude=$2, longitude=$3, comment=$4, construction=$5, ' +
             'glass=$6, household=$7, metal=$8, other=$9, paper=$10, plastic=$11, violationtype=$12, ' +
-            'state=$13, administration=$14, price=$15, level=$16 WHERE id=$17',
+            'state=$13, administration=$14, price=$15, level=$16, volume=$17, square=$18 WHERE id=$19',
         values: [
             data.address,
             data.latitude,
@@ -55,6 +57,8 @@ const updatePlacemark = (data) => {
             data.administration,
             data.price,
             data.level,
+            data.volume,
+            data.square,
             data.id
         ]
     };

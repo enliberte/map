@@ -28,10 +28,20 @@ const initialState = {
     editItemCard: {
         isDisplayed: false
     },
+    inWorkItemCard: {
+        isDisplayed: false
+    },
     violationTypes: [
         'Стихийная свалка',
         'Замусоренная территория',
         'Невывезенные контейнеры'
+    ],
+    levels: [
+        1,
+        2,
+        3,
+        4,
+        5
     ],
     newPlacemark: {
         isDisplayed: false,

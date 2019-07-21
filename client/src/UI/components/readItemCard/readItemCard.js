@@ -6,8 +6,9 @@ from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
-import {deletePlacemark, setEditedPlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {deletePlacemark, setEditedPlacemark, setInWorkPlacemark} from "../../../BLL/store/action_creators/placemarks";
 import {openEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
+import {openInWorkItemCard} from "../../../BLL/store/action_creators/inWorkItemCard";
 
 
 class ReadItemCard extends Component {
@@ -46,7 +47,9 @@ class ReadItemCard extends Component {
                         {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
                         {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
                         {this.props.placemark.level > 0 && <li>Угроза: {this.props.placemark.level}</li>}
-                        {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
+                        {this.props.placemark.volume > 0 && <li>Объем: {this.props.placemark.volume} м3</li>}
+                        {this.props.placemark.square > 0 && <li>Площадь: {this.props.placemark.square} м2</li>}
+                        {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price} руб.</li>}
                     </ul>
 
                     {this.props.placemark.comment &&
@@ -70,7 +73,9 @@ class ReadItemCard extends Component {
                     </div>}
 
                     {this.props.auth.role === 'Оператор' &&
-                    <button className="button button--default button--success">
+                    <button
+                        className="button button--default button--success"
+                        onClick={() => this.props.onWork(this.props.placemark)}>
                         Взять в работу
                     </button>}
 
@@ -98,6 +103,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         onDeletePlacemark(id) {
             dispatch(deletePlacemark(id));
+        },
+        onWork(placemark) {
+            dispatch(setInWorkPlacemark(placemark));
+            dispatch(openInWorkItemCard());
         },
         onClose() {
             dispatch(closeReadItemCard());

@@ -6,6 +6,7 @@ import initialState from "./initialState";
 import authPanel from "./reducers/authPanel";
 import {reducer as formReducer} from 'redux-form';
 import violationTypes from "./reducers/violationTypes";
+import levels from './reducers/levels';
 import createItemCard from './reducers/createItemCard';
 import newPlacemark from "./reducers/newPlacemark";
 import filters from "./reducers/filtrationPanel";
@@ -16,6 +17,7 @@ import currentPlacemark from "./reducers/currentPlacemark";
 import editedPlacemark from './reducers/editedPlacemark';
 import readItemCard from "./reducers/readItemCard";
 import editItemCard from './reducers/editItemCard';
+import inWorkItemCard from './reducers/inWorkItemCard';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
@@ -27,6 +29,7 @@ const store = createStoreWithMiddleware(
         regPanel,
         createItemCard,
         violationTypes,
+        levels,
         newPlacemark,
         filters,
         roles,
@@ -35,6 +38,7 @@ const store = createStoreWithMiddleware(
         editedPlacemark,
         readItemCard,
         editItemCard,
+        inWorkItemCard,
         form: formReducer
     }),
     initialState,

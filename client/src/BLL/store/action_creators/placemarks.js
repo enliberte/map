@@ -9,6 +9,8 @@ export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data}
 
 export const setEditedPlacemark = (data) => ({type: a.EDIT_PLACEMARK, payload: data});
 
+export const setInWorkPlacemark = (data) => ({type: a.SET_IN_WORK_PLACEMARK, payload: data});
+
 export const cancelNewPlacemark = () => ({type: a.CANCEL_PLACEMARK});
 
 export const setPlacemarksInStore = (data) => ({type: a.SET_PLACEMARKS, payload: data});
