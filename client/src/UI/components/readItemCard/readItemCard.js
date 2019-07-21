@@ -6,9 +6,15 @@ from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
-import {deletePlacemark, setEditedPlacemark, setInWorkPlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {
+    deletePlacemark,
+    setDonePlacemark,
+    setEditedPlacemark,
+    setInWorkPlacemark
+} from "../../../BLL/store/action_creators/placemarks";
 import {openEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 import {openInWorkItemCard} from "../../../BLL/store/action_creators/inWorkItemCard";
+import {openDoneItemCard} from "../../../BLL/store/action_creators/doneItemCard";
 
 
 class ReadItemCard extends Component {
@@ -47,9 +53,9 @@ class ReadItemCard extends Component {
                         {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
                         {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
                         {this.props.placemark.level > 0 && <li>Угроза: {this.props.placemark.level}</li>}
-                        {this.props.placemark.volume > 0 && <li>Объем: {this.props.placemark.volume} м3</li>}
-                        {this.props.placemark.square > 0 && <li>Площадь: {this.props.placemark.square} м2</li>}
-                        {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price} руб.</li>}
+                        {this.props.placemark.volume > 0 && <li>Объем, м3: {this.props.placemark.volume}</li>}
+                        {this.props.placemark.square > 0 && <li>Площадь, м2: {this.props.placemark.square}</li>}
+                        {this.props.placemark.price > 0 && <li>Стоимость вывоза, руб: {this.props.placemark.price}</li>}
                     </ul>
 
                     {this.props.placemark.comment &&
@@ -72,13 +78,19 @@ class ReadItemCard extends Component {
                         </button>
                     </div>}
 
-                    {this.props.auth.role === 'Оператор' &&
+                    {this.props.auth.role === 'Оператор' && this.props.placemark.state === 'Новая' &&
                     <button
                         className="button button--default button--success"
                         onClick={() => this.props.onWork(this.props.placemark)}>
                         Взять в работу
                     </button>}
 
+                    {this.props.auth.role === 'Агент' && this.props.placemark.state === 'В работе' &&
+                    <button
+                        className="button button--default button--success"
+                        onClick={() => this.props.onRemove(this.props.placemark)}>
+                        Выполнить заказ
+                    </button>}
 
                 </div>
             </section>
@@ -107,6 +119,10 @@ const mapDispatchToProps = (dispatch) => {
         onWork(placemark) {
             dispatch(setInWorkPlacemark(placemark));
             dispatch(openInWorkItemCard());
+        },
+        onRemove(placemark) {
+            dispatch(setDonePlacemark(placemark));
+            dispatch(openDoneItemCard());
         },
         onClose() {
             dispatch(closeReadItemCard());

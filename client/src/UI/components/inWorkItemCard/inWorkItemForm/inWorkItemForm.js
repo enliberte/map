@@ -8,6 +8,12 @@ class InWorkItemForm extends Component {
         return (
             <form className="form" onSubmit={this.props.handleSubmit}>
                 <div className="input">
+                    <Field className="input__field" component="input" name="administration" required />
+                    <span className="input__bar"></span>
+                    <label className="input__label">Администрация</label>
+                </div>
+
+                <div className="input">
                     <Field className="input__field" component="input" name="volume" required />
                     <span className="input__bar"></span>
                     <label className="input__label">Объем</label>

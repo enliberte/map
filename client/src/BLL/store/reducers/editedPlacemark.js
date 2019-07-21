@@ -10,6 +10,11 @@ const editedPlacemark = (state={}, action) => {
                 ...action.payload,
                 state: 'В работе'
             };
+        case a.SET_DONE_PLACEMARK:
+            return {
+                ...action.payload,
+                state: 'Выполнена'
+            };
         case a.EDIT_COORDINATES:
             return {
                 ...state,

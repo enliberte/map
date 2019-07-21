@@ -31,6 +31,9 @@ const initialState = {
     inWorkItemCard: {
         isDisplayed: false
     },
+    doneItemCard: {
+        isDisplayed: false
+    },
     violationTypes: [
         'Стихийная свалка',
         'Замусоренная территория',
@@ -51,7 +54,7 @@ const initialState = {
     filters: {
         'Новая': true,
         'В работе': true,
-        'Завершенная': true,
+        'Выполнена': true,
         'В архиве': true
     },
     roles: [

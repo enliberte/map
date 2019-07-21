@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a04a4673-974e-47be-aaff-58d6c3ebda3f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/UI/components/editItemCard/editItemCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/editItemCard/editItemCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/initialState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/BLL/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/BLL/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/ico/location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +23,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="365">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/initialState.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemForm/createItemForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="68" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -30,19 +57,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+            <state relative-caret-position="500">
+              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/UI/components/editItemCard/editItemCard.js">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/doneItemCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+            <state relative-caret-position="30">
+              <caret line="2" column="70" lean-forward="true" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/readItemCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/doneItemCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1396">
+              <caret line="124" column="30" lean-forward="true" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/doneItemCard/doneItemCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/UI/components/doneItemCard/inWorkItemForm/doneItemForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -91,10 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/filtrationPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/authPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/authPanel.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/auth.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/toolbar/logoutLink/logoutLink.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/regPanel.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/toolbar/regLink/regLink.js" />
@@ -128,20 +199,24 @@
         <option value="$PROJECT_DIR$/server/api/api.js" />
         <option value="$PROJECT_DIR$/server/api/methods/placemarks.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/index3.html" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/inWorkItemCard.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/store.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/App.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js" />
         <option value="$PROJECT_DIR$/server/api/methods/helpers.js" />
         <option value="$PROJECT_DIR$/server/api/sql/placemarks.js" />
-        <option value="$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js" />
         <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/inWorkItemCard.js" />
-        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/editItemCard/editItemCard.js" />
         <option value="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/constants.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/action_creators/doneItemCard.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/reducers/doneItemCard.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/initialState.js" />
+        <option value="$PROJECT_DIR$/client/src/BLL/store/store.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/doneItemCard/doneItemCard.js" />
+        <option value="$PROJECT_DIR$/client/src/UI/components/doneItemCard/inWorkItemForm/doneItemForm.js" />
       </list>
     </option>
   </component>
@@ -231,7 +306,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="authPanel" type="462c0819:PsiDirectoryNode" />
+              <item name="createItemCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -240,8 +315,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="authPanel" type="462c0819:PsiDirectoryNode" />
-              <item name="authForm" type="462c0819:PsiDirectoryNode" />
+              <item name="createItemCard" type="462c0819:PsiDirectoryNode" />
+              <item name="createItemForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -250,7 +325,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="editItemCard" type="462c0819:PsiDirectoryNode" />
+              <item name="doneItemCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -259,25 +334,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="filtrationPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="inWorkItemCard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="inWorkItemCard" type="462c0819:PsiDirectoryNode" />
+              <item name="doneItemCard" type="462c0819:PsiDirectoryNode" />
               <item name="inWorkItemForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -287,7 +344,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="inWorkItemCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -297,64 +354,6 @@
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="readItemCard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="regPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="regPanel" type="462c0819:PsiDirectoryNode" />
-              <item name="regForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-              <item name="authLink" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-              <item name="logoutLink" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="map" type="b2602c69:ProjectViewProjectNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-              <item name="regLink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="map" type="b2602c69:ProjectViewProjectNode" />
@@ -392,7 +391,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/BLL/store/reducers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/UI/components" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -405,9 +404,9 @@
       <recent name="C:\Users\as.sumatohin\WebstormProjects\map\client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/UI/components" />
       <recent name="$PROJECT_DIR$/client/src/BLL/store/reducers" />
       <recent name="$PROJECT_DIR$/client/src/BLL/store/action_creators" />
-      <recent name="$PROJECT_DIR$/client/src/UI/components" />
       <recent name="C:\Users\as.sumatohin\WebstormProjects\map\client\src\BLL\store\reducers" />
       <recent name="C:\Users\as.sumatohin\WebstormProjects\map\client\src\BLL\store\action_creators" />
     </key>
@@ -459,23 +458,22 @@
       <workItem from="1563429946663" duration="35232000" />
       <workItem from="1563558824509" duration="5853000" />
       <workItem from="1563615932662" duration="600000" />
-      <workItem from="1563694163884" duration="19817000" />
+      <workItem from="1563694163884" duration="21410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132145000" />
+    <option name="totallyTimeSpent" value="133738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="693" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20774385" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20774385" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32854578" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -495,44 +493,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/regPanel/regPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/regPanel/regForm/regForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/toolbar/authLink/authLink.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/toolbar/logoutLink/logoutLink.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/toolbar/regLink/regLink.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/toolbar/toolbar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-110">
@@ -573,23 +533,6 @@
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemForm/createItemForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="15" column="80" lean-forward="true" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/editItemCard/ico/location.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -611,13 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/readItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -716,23 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/initialState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/UI/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14">
@@ -740,27 +659,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/editItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -785,30 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="57" column="64" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/inWorkItemCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/inWorkItemCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -816,10 +690,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemForm/inWorkItemForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        <state relative-caret-position="-187">
+          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -833,10 +720,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/UI/components/inWorkItemCard/inWorkItemCard.js">
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/editItemCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/placemarks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-495">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/inWorkItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/editedPlacemark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/action_creators/doneItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="70" lean-forward="true" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/initialState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/doneItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/BLL/store/reducers/readItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/doneItemCard/ico/location.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/readItemCard/readItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1396">
+          <caret line="124" column="30" lean-forward="true" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/doneItemCard/doneItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/createItemCard/createItemForm/createItemForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="68" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/UI/components/doneItemCard/inWorkItemForm/doneItemForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
