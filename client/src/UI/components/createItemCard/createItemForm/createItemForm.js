@@ -17,9 +17,9 @@ class CreateItemForm extends Component {
                 </div>
 
                 <div className="select">
-                    <Field className="select__field" component="select" name="violationType">
+                    <Field className="select__field" component="select" name="violationtype">
                         {this.props.violationTypes.map(
-                            (violationType, index) => <option className="select__option" key={index}>{violationType}</option>
+                            (violationtype, index) => <option className="select__option" key={index}>{violationtype}</option>
                         )}
                     </Field>
                     <span className="select__bar"></span>
