@@ -1,5 +1,6 @@
 getPlacemarks = require('../sql/placemarks').getPlacemarks;
 insertPlacemark = require('../sql/placemarks').insertPlacemark;
+updatePlacemark = require('../sql/placemarks').updatePlacemark;
 initializePlacemarkData = require('./helpers').initializePlacemarkData;
 
 
@@ -22,5 +23,17 @@ const savePlacemark = (pool, params, res) => {
 };
 
 
+const updateEditedPlacemark = (pool, params, res) => {
+    pool.query(updatePlacemark(params))
+        .then(result => {
+            console.log(result);
+            res.send(params);
+        })
+        .catch(err => res.status(401).send(err));
+
+};
+
+
 exports.getAllPlacemarks = getAllPlacemarks;
 exports.savePlacemark = savePlacemark;
+exports.updateEditedPlacemark = updateEditedPlacemark;

@@ -33,5 +33,37 @@ const insertPlacemark = (data) => {
 };
 
 
+const updatePlacemark = (data) => {
+    return {
+        text: 'UPDATE placemarks SET address=$1, latitude=$2, longitude=$3, comment=$4, construction=$5, ' +
+            'glass=$6, household=$7, metal=$8, other=$9, paper=$10, plastic=$11, violationtype=$12, ' +
+            'state=$13, administration=$14, price=$15, level=$16 WHERE id=$17',
+        values: [
+            data.address,
+            data.latitude,
+            data.longitude,
+            data.comment,
+            data.construction,
+            data.glass,
+            data.household,
+            data.metal,
+            data.other,
+            data.paper,
+            data.plastic,
+            data.violationtype,
+            data.state,
+            data.administration,
+            data.price,
+            data.level,
+            data.id
+        ]
+    };
+};
+
+
+
+
+
 exports.getPlacemarks = getPlacemarks;
 exports.insertPlacemark = insertPlacemark;
+exports.updatePlacemark = updatePlacemark;

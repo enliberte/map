@@ -1,6 +1,7 @@
 import {actions as a, API_KEY} from "../constants";
 import * as axios from 'axios';
 import {closeCreateItemCard, openCreateItemCard} from "./createItemCard";
+import {closeEditItemCard} from "./editItemCard";
 
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
@@ -19,6 +20,8 @@ export const setNewAddress = (address) => ({type: a.SET_NEW_ADDRESS, payload: ad
 
 export const addPlacemarkToStore = (data) => ({type: a.SAVE_PLACEMARK, payload: data});
 
+export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payload: data});
+
 export const savePlacemark = (data) => (dispatch) => {
     axios.post('/', {method: 'SAVE_PLACEMARK', params: data})
         .then((response) => {
@@ -31,6 +34,21 @@ export const savePlacemark = (data) => (dispatch) => {
             dispatch(addPlacemarkToStore(response.data));
             dispatch(closeCreateItemCard());
             dispatch(cancelNewPlacemark());
+        })
+        .catch((err) => console.log(err))
+};
+
+export const updatePlacemark = (data) => (dispatch) => {
+    axios.post('/', {method: 'UPDATE_PLACEMARK', params: data})
+        .then((response) => {
+            if (response.status !== 200) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((response) => {
+            dispatch(updatePlacemarkInStore(response.data));
+            dispatch(closeEditItemCard());
         })
         .catch((err) => console.log(err))
 };

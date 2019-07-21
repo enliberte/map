@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import EditItemCardForm from './editItemForm/editItemForm';
 import {closeEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
-import {cancelNewPlacemark, savePlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {updatePlacemark} from "../../../BLL/store/action_creators/placemarks";
 
 
 class EditItemCard extends Component {
@@ -20,7 +20,7 @@ class EditItemCard extends Component {
                         </a>
                     </div>
                 </div>
-                <EditItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords, this.props.login)}/>
+                <EditItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.latitude, this.props.longitude)}/>
             </section>
         )
     }
@@ -29,18 +29,18 @@ class EditItemCard extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        login: state.auth.login,
-        coords: state.newPlacemark.coords
+        latitude: state.editedPlacemark.latitude,
+        longitude: state.editedPlacemark.longitude
     }
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmit(data, coords, author) {
-            data.coords = coords;
-            data.author = author;
-            dispatch(savePlacemark(data));
+        onSubmit(data, latitude, longitude) {
+            data.latitude = latitude;
+            data.longitude = longitude;
+            dispatch(updatePlacemark(data));
         },
         onClose() {
             dispatch(closeEditItemCard());
