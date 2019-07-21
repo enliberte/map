@@ -82,6 +82,7 @@ export const editCoords = (address) => (dispatch) => {
             return response;
         })
         .then((response) => {
+            console.log(response.data.response.GeoObjectCollection);
             return response.data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').map(c => +c);
         })
         .then((coords) => dispatch(setEditedCoordinates(coords.reverse())))
