@@ -60,10 +60,14 @@ const updatePlacemark = (data) => {
     };
 };
 
-
-
-
+const delPlacemark = (id) => {
+    return {
+        text: 'DELETE FROM placemarks WHERE sid=$1',
+        values: [id]
+    }
+};
 
 exports.getPlacemarks = getPlacemarks;
 exports.insertPlacemark = insertPlacemark;
 exports.updatePlacemark = updatePlacemark;
+exports.delPlacemark = delPlacemark;

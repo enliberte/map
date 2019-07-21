@@ -1,6 +1,7 @@
 getPlacemarks = require('../sql/placemarks').getPlacemarks;
 insertPlacemark = require('../sql/placemarks').insertPlacemark;
 updatePlacemark = require('../sql/placemarks').updatePlacemark;
+delPlacemark = require('../sql/placemarks').delPlacemark;
 initializePlacemarkData = require('./helpers').initializePlacemarkData;
 
 
@@ -34,6 +35,18 @@ const updateEditedPlacemark = (pool, params, res) => {
 };
 
 
+const deletePlacemark = (pool, params, res) => {
+    pool.query(delPlacemark(params.id))
+        .then(result => {
+            console.log(result);
+            res.send(params.id);
+        })
+        .catch(err => res.status(401).send(err));
+
+};
+
+
 exports.getAllPlacemarks = getAllPlacemarks;
 exports.savePlacemark = savePlacemark;
 exports.updateEditedPlacemark = updateEditedPlacemark;
+exports.deletePlacemark = deletePlacemark;

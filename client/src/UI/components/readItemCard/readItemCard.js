@@ -6,7 +6,7 @@ from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
-import {setEditedPlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {deletePlacemark, setEditedPlacemark} from "../../../BLL/store/action_creators/placemarks";
 import {openEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 
 
@@ -58,9 +58,18 @@ class ReadItemCard extends Component {
                     {this.props.auth.isAuthorized &&
                     <div className="form-information">
                         <button
-                            className="button button--info"
+                            className="button button--delete"
                             onClick={() => this.props.onEditPlacemark(this.props.placemark)}>
                             Редактировать
+                        </button>
+                    </div>}
+
+                    {this.props.auth.isAuthorized &&
+                    <div className="form-information">
+                        <button
+                            className="button button--danger"
+                            onClick={() => this.props.onDeletePlacemark(this.props.placemark.id)}>
+                            Удалить
                         </button>
                     </div>}
 
@@ -90,6 +99,9 @@ const mapDispatchToProps = (dispatch) => {
         onEditPlacemark(placemark) {
             dispatch(setEditedPlacemark(placemark));
             dispatch(openEditItemCard());
+        },
+        onDeletePlacemark(id) {
+            dispatch(deletePlacemark(id));
         },
         onClose() {
             dispatch(closeReadItemCard());

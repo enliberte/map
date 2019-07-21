@@ -2,6 +2,7 @@ import {actions as a, API_KEY} from "../constants";
 import * as axios from 'axios';
 import {closeCreateItemCard, openCreateItemCard} from "./createItemCard";
 import {closeEditItemCard} from "./editItemCard";
+import {closeReadItemCard} from "./readItemCard";
 
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
@@ -51,6 +52,21 @@ export const updatePlacemark = (data) => (dispatch) => {
         .then((response) => {
             dispatch(updatePlacemarkInStore(response.data));
             dispatch(closeEditItemCard());
+        })
+        .catch((err) => console.log(err))
+};
+
+export const deletePlacemark = (id) => (dispatch) => {
+    axios.post('/', {method: 'DELETE_PLACEMARK', params: id})
+        .then((response) => {
+            if (response.status !== 200) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((response) => {
+            dispatch(closeReadItemCard());
+            dispatch(deletePlacemarkFromStore(response.data.id));
         })
         .catch((err) => console.log(err))
 };
