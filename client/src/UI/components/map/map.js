@@ -162,7 +162,7 @@ class DumpMap extends Component {
                 );
                 const updatedPlacemarks = this.props.placemarks.filter(
                     placemark => prevProps.placemarks.some(oldPlacemark => (
-                        oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== oldPlacemark.latitude || oldPlacemark.longitude !== oldPlacemark.longitude)
+                        oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== placemark.latitude || oldPlacemark.longitude !== placemark.longitude)
                     ))
                 );
                 console.log(updatedPlacemarks);
