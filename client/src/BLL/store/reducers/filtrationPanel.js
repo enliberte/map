@@ -16,7 +16,7 @@ const filters = (state='', action) => {
         case a.SET_FILTERS_DONE:
             return {
                 ...state,
-                'Завершенная': action.payload
+                'Выполнена': action.payload
             };
         case a.SET_FILTERS_IN_WORK:
             return {
