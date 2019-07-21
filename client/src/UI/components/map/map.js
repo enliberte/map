@@ -111,6 +111,7 @@ class DumpMap extends Component {
                         placemark => {
                             if (placemark.id === placemarkObj.properties.get('id')) {
                                 placemarkObj.geometry.setCoordinates([placemark.latitude, placemark.longitude]);
+                                placemarkObj.options.set('IconColor', colors[placemark.state]);
                             }
                         }
                     );
@@ -166,7 +167,7 @@ class DumpMap extends Component {
                 );
                 const updatedPlacemarks = this.props.placemarks.filter(
                     placemark => prevProps.placemarks.some(oldPlacemark => (
-                        oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== placemark.latitude || oldPlacemark.longitude !== placemark.longitude)
+                        oldPlacemark.id === placemark.id && (oldPlacemark.latitude !== placemark.latitude || oldPlacemark.longitude !== placemark.longitude || oldPlacemark.state !== placemark.state)
                     ))
                 );
                 this.addPlacemarks(addedPlacemarks);
