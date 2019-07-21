@@ -57,7 +57,7 @@ export const updatePlacemark = (data) => (dispatch) => {
 };
 
 export const deletePlacemark = (id) => (dispatch) => {
-    axios.post('/', {method: 'DELETE_PLACEMARK', params: id})
+    axios.post('/', {method: 'DELETE_PLACEMARK', params: {id}})
         .then((response) => {
             if (response.status !== 200) {
                 throw Error(response.statusText);
