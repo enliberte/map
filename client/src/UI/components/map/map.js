@@ -6,6 +6,7 @@ import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/acti
 import {openAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 import {setCurrentPlacemark} from "../../../BLL/store/action_creators/currentPlacemark";
 import {openReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
+import {setPosition} from "../../../BLL/store/action_creators/map";
 
 
 class DumpMap extends Component {
@@ -199,6 +200,7 @@ const mapDispatchToProps = (dispatch) => {
         onClickOnMap(isAuthorized, coords) {
             if (isAuthorized) {
                 dispatch(addNewPlacemarkWithAddress(coords));
+                dispatch(setPosition(coords[0], coords[1]));
             } else {
                 dispatch(openAuthPanel());
             }
