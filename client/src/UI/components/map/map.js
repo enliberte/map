@@ -110,7 +110,7 @@ class DumpMap extends Component {
                     placemarks.forEach(
                         placemark => {
                             if (placemark.id === placemarkObj.properties.get('id')) {
-                                placemarkObj.setCoordinates([placemark.latitude, placemark.longitude]);
+                                placemarkObj.geometry.setCoordinates([placemark.latitude, placemark.longitude]);
                             }
                         }
                     );
