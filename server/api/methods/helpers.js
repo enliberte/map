@@ -18,7 +18,7 @@ const initializePlacemarkData = (rawData) => {
         state: 'Новая',
         administration: '',
         price: 0,
-        level: 5,
+        level: 0,
         ...rawData
     };
 };

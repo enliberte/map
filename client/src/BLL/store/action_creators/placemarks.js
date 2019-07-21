@@ -5,11 +5,15 @@ import {closeCreateItemCard, openCreateItemCard} from "./createItemCard";
 
 export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data});
 
+export const setEditedPlacemark = (data) => ({type: a.EDIT_PLACEMARK, payload: data});
+
 export const cancelNewPlacemark = () => ({type: a.CANCEL_PLACEMARK});
 
 export const setPlacemarksInStore = (data) => ({type: a.SET_PLACEMARKS, payload: data});
 
 export const setNewCoordinates = (coords) => ({type: a.SET_NEW_COORDINATES, payload: coords});
+
+export const setEditedCoordinates = (coords) => ({type: a.EDIT_COORDINATES, payload: coords});
 
 export const setNewAddress = (address) => ({type: a.SET_NEW_ADDRESS, payload: address});
 
@@ -65,6 +69,22 @@ export const setNewAddressAndCoords = (address) => (dispatch) => {
             return response.data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').map(c => +c);
         })
         .then((coords) => dispatch(setNewCoordinates(coords.reverse())))
+        .catch((err) => {console.log(err)})
+};
+
+export const editCoords = (address) => (dispatch) => {
+    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=${API_KEY}&geocode=${address}&results=1`;
+    axios.get(url)
+        .then((response) => {
+            if (response.status !== 200) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((response) => {
+            return response.data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').map(c => +c);
+        })
+        .then((coords) => dispatch(setEditedCoordinates(coords.reverse())))
         .catch((err) => {console.log(err)})
 };
 

@@ -6,6 +6,7 @@ from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
+import {setEditedPlacemark} from "../../../BLL/store/action_creators/placemarks";
 
 
 class ReadItemCard extends Component {
@@ -43,7 +44,7 @@ class ReadItemCard extends Component {
                         <li>Тип нарушения: {this.props.placemark.violationtype}</li>
                         {this.getTrashTypesStr(this.props.placemark) && <li>Типы отходов: {this.getTrashTypesStr(this.props.placemark)}</li>}
                         {this.props.placemark.administration && <li>Администрация: {this.props.placemark.administration}</li>}
-                        {this.props.placemark.level && <li>Угроза: {this.props.placemark.level}</li>}
+                        {this.props.placemark.level > 0 && <li>Угроза: {this.props.placemark.level}</li>}
                         {this.props.placemark.price > 0 && <li>Стоимость вывоза: {this.props.placemark.price}</li>}
                     </ul>
 
@@ -55,7 +56,9 @@ class ReadItemCard extends Component {
 
                     {this.props.auth.isAuthorized &&
                     <div className="form-information">
-                        <button className="button button--info">
+                        <button
+                            className="button button--info"
+                            onClick={() => this.props.onEditPlacemark(this.props.placemark)}>
                             Редактировать
                         </button>
                     </div>}
@@ -83,6 +86,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        onEditPlacemark(placemark) {
+            dispatch(setEditedPlacemark(placemark));
+        },
         onClose() {
             dispatch(closeReadItemCard());
         }

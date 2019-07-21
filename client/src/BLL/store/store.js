@@ -13,6 +13,7 @@ import regPanel from "./reducers/regPanel";
 import roles from './reducers/roles';
 import map from './reducers/map';
 import currentPlacemark from "./reducers/currentPlacemark";
+import editedPlacemark from './reducers/editedPlacemark';
 import readItemCard from "./reducers/readItemCard";
 
 
@@ -30,6 +31,7 @@ const store = createStoreWithMiddleware(
         roles,
         map,
         currentPlacemark,
+        editedPlacemark,
         readItemCard,
         form: formReducer
     }),

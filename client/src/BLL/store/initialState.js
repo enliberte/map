@@ -1,6 +1,7 @@
 const initialState = {
     placemarks: [],
     currentPlacemark: '',
+    editedPlacemark: {},
     map: {
         latitude: 57.626578,
         longitude: 39.893858
