@@ -8,8 +8,8 @@ const editedPlacemark = (state={}, action) => {
         case a.EDIT_COORDINATES:
             return {
                 ...state,
-                latitude: action.payload.coords[0],
-                longitude: action.payload.coords[1]
+                latitude: action.payload[0],
+                longitude: action.payload[1]
             };
         default:
             return state;
