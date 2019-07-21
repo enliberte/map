@@ -140,12 +140,12 @@ class DumpMap extends Component {
             if (this.props.placemarks !== prevProps.placemarks) {
                 const addedPlacemarks = this.props.placemarks.filter(
                     placemark => !prevProps.placemarks.some(oldPlacemark => (
-                        ((oldPlacemark.latitude !== placemark.latitude || oldPlacemark.longitude !== placemark.longitude)) || oldPlacemark.id === placemark.id
+                        oldPlacemark.id === placemark.id
                     ))
                 );
                 const removedPlacemarks = prevProps.placemarks.filter(
                     oldPlacemark => !this.props.placemarks.some(newPlacemark => (
-                        ((newPlacemark.latitude !== oldPlacemark.latitude && newPlacemark.longitude !== oldPlacemark.longitude)) || newPlacemark.id === oldPlacemark.id
+                        newPlacemark.id === oldPlacemark.id
                     ))
                 );
                 this.addPlacemarks(addedPlacemarks);
