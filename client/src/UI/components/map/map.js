@@ -69,7 +69,7 @@ class DumpMap extends Component {
     }
 
     clickOnMap(coords) {
-        this.props.onClickOnMap(this.props.auth.isAuthorized, coords);
+        this.props.onClickOnMap(this.props.auth.role, coords);
     }
 
     createPlacemark() {
@@ -196,8 +196,8 @@ const mapDispatchToProps = (dispatch) => {
         onSetPlacemarks() {
             dispatch(setPlacemarks());
         },
-        onClickOnMap(isAuthorized, coords) {
-            if (isAuthorized) {
+        onClickOnMap(role, coords) {
+            if (role === 'Гражданин') {
                 dispatch(addNewPlacemarkWithAddress(coords));
             } else {
                 dispatch(openAuthPanel());
