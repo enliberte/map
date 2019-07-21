@@ -88,6 +88,7 @@ export const addNewPlacemarkWithAddress = (coords) => (dispatch) => {
         })
         .then((address) => {
             dispatch(addNewPlacemark({coords: coords.reverse(), address}));
+            dispatch(change('createItemForm', 'address', address));
             dispatch(openCreateItemCard());
         })
         .catch((err) => {console.log(err)})
