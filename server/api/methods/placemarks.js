@@ -39,7 +39,7 @@ const deletePlacemark = (pool, params, res) => {
     pool.query(delPlacemark(params.id))
         .then(result => {
             console.log(result);
-            res.send(params.id);
+            res.send({id: params.id});
         })
         .catch(err => res.status(401).send(err));
 
