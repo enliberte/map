@@ -33,7 +33,7 @@ export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payl
 export const deletePlacemarkFromStore = (id) => ({type: a.DELETE_PLACEMARK, payload: id});
 
 export const savePlacemark = (data) => (dispatch) => {
-    axios.post('/', {method: 'SAVE_PLACEMARK', params: data}, {headers: {'Content-Type': 'multipart/form-data'}})
+    axios.post('/', {method: 'SAVE_PLACEMARK', params: data})
         .then((response) => {
             if (response.status !== 200) {
                 throw Error(response.statusText);

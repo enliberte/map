@@ -22,8 +22,6 @@ const pool = new Pool({
 const apiRouter = (req, res) => {
     const method = req.body.method;
     const params = req.body.params;
-    const files = req.files;
-    console.log(files);
     switch (method) {
         case methods.GET_PLACEMARKS_DATA:
             getAllPlacemarks(pool, res);
