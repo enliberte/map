@@ -25,6 +25,16 @@ const newPlacemark = (state={}, action) => {
                 ...state,
                 coords: action.payload
             };
+        case a.ADD_PICTURES_TO_NEW_PLACEMARK:
+            return {
+                ...state,
+                pictures: [...state.pictures, ...action.payload]
+            };
+        case a.DEL_PICTURE_FROM_NEW_PLACEMARK:
+            return {
+                ...state,
+                pictures: state.pictures.filter(picture => picture.name !== action.payload)
+            };
         default:
             return state;
     }

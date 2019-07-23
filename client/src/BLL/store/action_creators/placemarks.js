@@ -10,6 +10,10 @@ export const addNewPlacemark = (data) => ({type: a.ADD_PLACEMARK, payload: data}
 
 export const setEditedPlacemark = (data) => ({type: a.EDIT_PLACEMARK, payload: data});
 
+export const addPicturesToNewPlacemark = (files) => ({type: a.ADD_PICTURES_TO_NEW_PLACEMARK, payload: files});
+
+export const delPictureFromNewPlacemark = (name) => ({type: a.DEL_PICTURE_FROM_NEW_PLACEMARK, payload: name});
+
 export const setInWorkPlacemark = (data) => ({type: a.SET_IN_WORK_PLACEMARK, payload: data});
 
 export const setDonePlacemark = (data) => ({type: a.SET_DONE_PLACEMARK, payload: data});
@@ -29,7 +33,7 @@ export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payl
 export const deletePlacemarkFromStore = (id) => ({type: a.DELETE_PLACEMARK, payload: id});
 
 export const savePlacemark = (data) => (dispatch) => {
-    axios.post('/', {method: 'SAVE_PLACEMARK', params: data})
+    axios.post('/', {method: 'SAVE_PLACEMARK', params: data}, {headers: {'Content-Type': 'multipart/form-data'}})
         .then((response) => {
             if (response.status !== 200) {
                 throw Error(response.statusText);

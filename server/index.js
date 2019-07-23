@@ -3,6 +3,7 @@ const path = require('path');
 const {apiRouter} = require('./api/api');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const multer  = require("multer");
 
 
 const port = process.env.PORT || 8080;
@@ -10,6 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/dist'));
+app.use(multer({dest: "uploads"}).array("pictures"));
 app.use(cookieParser());
 
 

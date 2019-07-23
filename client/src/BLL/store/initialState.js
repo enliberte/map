@@ -49,7 +49,8 @@ const initialState = {
     newPlacemark: {
         isDisplayed: false,
         coords: [],
-        address: ''
+        address: '',
+        pictures: []
     },
     filters: {
         'Новая': true,

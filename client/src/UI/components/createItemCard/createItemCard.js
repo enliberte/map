@@ -21,7 +21,7 @@ class CreateItemCard extends Component {
                         </a>
                     </div>
                 </div>
-                <CreateItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords, this.props.login)}/>
+                <CreateItemCardForm onSubmit={(data) => this.props.onSubmit(data, this.props.coords, this.props.login, this.props.pictures)}/>
             </section>
         )
     }
@@ -31,16 +31,18 @@ class CreateItemCard extends Component {
 const mapStatesToProps = (state) => {
     return {
         login: state.auth.login,
-        coords: state.newPlacemark.coords
+        coords: state.newPlacemark.coords,
+        pictures: state.newPlacemark.pictures
     }
 };
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmit(data, coords, author) {
+        onSubmit(data, coords, author, pictures) {
             data.coords = coords;
             data.author = author;
+            data.pictures = pictures;
             dispatch(savePlacemark(data));
         },
         onClose() {

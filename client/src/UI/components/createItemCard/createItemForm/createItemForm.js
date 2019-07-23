@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import {setNewAddressAndCoords} from "../../../../BLL/store/action_creators/placemarks";
+import {
+    addPicturesToNewPlacemark,
+    delPictureFromNewPlacemark,
+    setNewAddressAndCoords
+} from "../../../../BLL/store/action_creators/placemarks";
 
 
 class CreateItemForm extends Component {
     render() {
         return (
-            <form className="form" onSubmit={this.props.handleSubmit}>
+            <form className="form" enctype="multipart/form-data" onSubmit={this.props.handleSubmit}>
 
                 <div className="input">
                     <Field className="input__field" component="input" name="address" onChange={this.props.onSetAddress} required />
@@ -63,6 +67,25 @@ class CreateItemForm extends Component {
                     <label htmlFor="checkbox-id-7" className="checkbox__label">Прочее</label>
                 </div>
 
+                <div className="button button--outline button--upload">
+                    <input type="file" className="button__field" onChange={this.props.onAddFiles} multiple />
+                    <i className="material-icons button__icon">add_photo_alternate</i>
+                    <span className="button__text">Прикрепить файл</span>
+                </div>
+
+                <div className="downloaded">
+                    {this.props.pictures.map(
+                        (picture, index) => (
+                            <div className="downloaded-item">
+                                <a href="#" className="link" onClick={() => this.props.onDeleteFile(picture.name)}>
+                                    <i className="material-icons link__icon">close</i>
+                                </a>
+                                <span className="downloaded-item__file-name">{picture.name}</span>
+                            </div>
+                        )
+                    )}
+                </div>
+
                 <div className="textarea">
                     <Field component="textarea" name="comment" className="textarea__field" placeholder="Введите комментарий" />
                     <span className="textarea__bar"></span>
@@ -79,7 +102,8 @@ class CreateItemForm extends Component {
 const mapStateToProps = (state) => {
     return {
         violationTypes: state.violationTypes,
-        initialValues: {address: state.newPlacemark.address}
+        pictures: state.newPlacemark.pictures,
+        initialValues: {address: state.newPlacemark.address, pictures: null}
     }
 };
 
@@ -88,6 +112,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSetAddress(event) {
             dispatch(setNewAddressAndCoords(event.target.value));
+        },
+        onAddFiles(event) {
+            dispatch(addPicturesToNewPlacemark(event.target.files));
+        },
+        onDeleteFile(name) {
+            dispatch(delPictureFromNewPlacemark(name))
         }
     }
 };
