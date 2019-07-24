@@ -32,7 +32,7 @@ export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payl
 
 export const deletePlacemarkFromStore = (id) => ({type: a.DELETE_PLACEMARK, payload: id});
 
-export const savePlacemark = (data) => (dispatch) => {
+export const savePlacemark = (data, pictures) => (dispatch) => {
     axios.post('/', {method: 'SAVE_PLACEMARK', params: data})
         .then((response) => {
             if (response.status !== 200) {
@@ -41,6 +41,15 @@ export const savePlacemark = (data) => (dispatch) => {
             return response;
         })
         .then((response) => {
+            if (pictures.length > 0) {
+                const fd = new FormData();
+                fd.append('placemarkId', response.data.id);
+                for (let picture of pictures) {
+                    fd.append('pictures', picture);
+                }
+                axios.post('/pictures', fd, {headers: {'content-type': 'multipart/form-data'}});
+            }
+
             dispatch(addPlacemarkToStore(response.data));
             dispatch(closeCreateItemCard());
             dispatch(cancelNewPlacemark());

@@ -183,7 +183,7 @@ class DumpMap extends Component {
 }
 
 
-const mapStatesToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         auth: state.auth,
         coords: [state.map.latitude, state.map.longitude],
@@ -213,4 +213,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStatesToProps, mapDispatchToProps)(DumpMap);
+export default connect(mapStateToProps, mapDispatchToProps)(DumpMap);

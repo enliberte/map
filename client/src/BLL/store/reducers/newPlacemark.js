@@ -8,6 +8,7 @@ const newPlacemark = (state={}, action) => {
                 ...state,
                 coords: action.payload.coords,
                 address: action.payload.address,
+                pictures: [],
                 isDisplayed: true
             };
         case a.CANCEL_PLACEMARK:
