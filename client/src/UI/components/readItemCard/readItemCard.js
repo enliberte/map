@@ -64,7 +64,7 @@ class ReadItemCard extends Component {
                         <p className="application__comments-text">{this.props.placemark.comment}</p>
                     </div>}
 
-                    {(this.props.auth.login === this.props.placemark.author || this.props.auth.role === 'Оператор') && this.props.placemark.state === 'Новая' &&
+                    {(this.props.auth.login === this.props.placemark.author || this.props.auth.role === 'Администрация') && this.props.placemark.state === 'Новая' &&
                     <div className="form-information">
                         <button
                             className="button button--info"
@@ -78,7 +78,7 @@ class ReadItemCard extends Component {
                         </button>
                     </div>}
 
-                    {this.props.auth.role === 'Оператор' && this.props.placemark.state === 'Новая' &&
+                    {this.props.auth.role === 'Администрация' && this.props.placemark.state === 'Новая' &&
                     <button
                         className="button button--default button--success"
                         onClick={() => this.props.onWork(this.props.placemark)}>
