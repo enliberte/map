@@ -98,7 +98,7 @@ class DumpMap extends Component {
             for (let placemarkObj of placemarksObj) {
                 this.Ymap.geoObjects.add(placemarkObj);
                 placemarkObj.events.add('click', (event) => this.props.onClickOnPlacemark(
-                    placemarkObj.properties.get('id'))
+                    placemarkObj.properties.get('id'), this.props.placemarks)
                 );
             }
         }
@@ -188,7 +188,7 @@ const mapStateToProps = (state) => {
         auth: state.auth,
         coords: [state.map.latitude, state.map.longitude],
         placemarks: state.placemarks.filter(placemark => state.filters[placemark.state]),
-        newPlacemark: state.newPlacemark
+        newPlacemark: state.newPlacemark,
     }
 };
 
@@ -205,8 +205,10 @@ const mapDispatchToProps = (dispatch) => {
                 dispatch(openAuthPanel());
             }
         },
-        onClickOnPlacemark(id) {
+        onClickOnPlacemark(id, placemarks) {
+            const currentPlacemark = placemarks.filter(placemark => placemark.id === id)[0];
             dispatch(setCurrentPlacemark(id));
+            dispatch(setPosition(currentPlacemark.latitude, currentPlacemark.longitude));
             dispatch(openReadItemCard());
         }
     }

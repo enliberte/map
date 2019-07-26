@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
-import {setFiltersArchive, setFiltersDone, setFiltersInWork, setFiltersNew}
-from "../../../BLL/store/action_creators/filtrationPanel";
-import {classes, colors as c} from "../../../BLL/store/constants";
-import {setPosition} from "../../../BLL/store/action_creators/map";
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
 import {
     deletePlacemark,
