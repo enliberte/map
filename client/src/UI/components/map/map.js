@@ -176,7 +176,7 @@ class DumpMap extends Component {
                 this.removePlacemarks(removedPlacemarks);
             }
             if (this.props.coords !== prevProps.coords) {
-                this.Ymap.setCenter(this.props.coords, 16);
+                this.Ymap.panTo(this.props.coords, {flying: true});
             }
         }
     }
