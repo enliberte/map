@@ -22,7 +22,6 @@ class DumpMap extends Component {
 
     componentDidMount() {
         ymaps.ready(() => {
-
             this.Ymap = new ymaps.Map("YandexMap", {
                 center: this.props.coords,
                 zoom: 7
@@ -175,7 +174,7 @@ class DumpMap extends Component {
                 this.updatePlacemarks(updatedPlacemarks);
                 this.removePlacemarks(removedPlacemarks);
             }
-            if (this.props.coords !== prevProps.coords) {
+            if (this.props.coords[0] !== prevProps.coords[0] && this.props.coords[1] !== prevProps.coords[1]) {
                 this.Ymap.panTo(this.props.coords, {flying: true});
             }
         }
