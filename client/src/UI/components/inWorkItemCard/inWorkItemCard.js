@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import InWorkItemForm from './inWorkItemForm/inWorkItemForm';
-import {updatePlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {updatePlacemarkSaga} from "../../../BLL/store/action_creators/placemarks";
 import {closeInWorkItemCard} from "../../../BLL/store/action_creators/inWorkItemCard";
 
 
@@ -30,7 +30,7 @@ class InWorkItemCard extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit(data) {
-            dispatch(updatePlacemark(data));
+            dispatch(updatePlacemarkSaga(data));
             dispatch(closeInWorkItemCard());
         },
         onClose() {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DoneItemForm from './doneItemForm/doneItemForm';
-import {updatePlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {updatePlacemarkSaga} from "../../../BLL/store/action_creators/placemarks";
 import {closeDoneItemCard} from "../../../BLL/store/action_creators/doneItemCard";
 
 
@@ -30,7 +30,7 @@ class DoneItemCard extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit(data) {
-            dispatch(updatePlacemark(data));
+            dispatch(updatePlacemarkSaga(data));
             dispatch(closeDoneItemCard());
         },
         onClose() {
