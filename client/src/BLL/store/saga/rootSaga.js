@@ -5,16 +5,16 @@ import {watchSetPlacemarks, watchSavePlacemark, watchUpdatePlacemark, watchDelet
 
 export default function *rootSaga() {
 	yield all([
-		watchIsAuthorized,
-		watchLogout,
-		watchAuth,
-		watchRegister,
-		watchSetPlacemarks,
-		watchSavePlacemark,
-		watchUpdatePlacemark,
-		watchDeletePlacemark,
-		watchAddNewPlacemarkWithAddress,
-		watchSetNewAddressAndCoords,
-		watchEditCoords
+		watchIsAuthorized(),
+		watchLogout(),
+		watchAuth(),
+		watchRegister(),
+		watchSetPlacemarks(),
+		watchSavePlacemark(),
+		watchUpdatePlacemark(),
+		watchDeletePlacemark(),
+		watchAddNewPlacemarkWithAddress(),
+		watchSetNewAddressAndCoords(),
+		watchEditCoords()
 	]);
 }
