@@ -26,3 +26,17 @@ export const addPlacemarkToStore = (data) => ({type: a.SAVE_PLACEMARK, payload: 
 export const updatePlacemarkInStore = (data) => ({type: a.UPDATE_PLACEMARK, payload: data});
 
 export const deletePlacemarkFromStore = (id) => ({type: a.DELETE_PLACEMARK, payload: id});
+
+export const setPlacemarksSaga = () => ({type: a.SET_PLACEMARKS_SAGA});
+
+export const addNewPlacemarkWithAddressSaga = (coords) => ({type: a.ADD_PLACEMARK_SAGA, payload: coords})
+
+export const savePlacemarkSaga = (data) => ({type: a.SAVE_PLACEMARK_SAGA, payload: data});
+
+export const updatePlacemarkSaga = (data) => ({type: a.UPDATE_PLACEMARK_SAGA, payload: data});
+
+export const deletePlacemarkSaga = (id) => ({type: a.DELETE_PLACEMARK_SAGA, payload: id});
+
+export const setNewAddressAndCoordsSaga = (address) => ({type: a.SET_NEW_ADDRESS_SAGA, payload: address});
+
+export const editCoordsSaga = (address) => ({type: a.EDIT_COORDINATES_SAGA, payload: address});

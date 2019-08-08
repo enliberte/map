@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import {editCoords} from "../../../../BLL/store/action_creators/placemarks";
+import {editCoordsSaga} from "../../../../BLL/store/action_creators/placemarks";
 
 
 class EditItemForm extends Component {
@@ -87,7 +87,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSetAddress(event) {
-            dispatch(editCoords(event.target.value));
+            dispatch(editCoordsSaga(event.target.value));
         }
     }
 };
