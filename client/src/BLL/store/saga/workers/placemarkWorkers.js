@@ -54,6 +54,7 @@ export function *addNewPlacemarkWithAddress(action) {
 	try {
 		const response = yield call(fetchAddress, action.payload, API_KEY);
 		const {name, description} = response.data.response.GeoObjectCollection.featureMember[0].GeoObject;
+		const coords = getCoords(response);
 		const address = `${name}, ${description}`;
 		yield put(addNewPlacemark({coords: coords.reverse(), address}));
 		yield put(change('createItemForm', 'address', address));
