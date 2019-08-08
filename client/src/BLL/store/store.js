@@ -23,7 +23,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './saga/rootSaga';
 
 
-const sagaMiddleware = createSagaMiddleware(thunk);
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     combineReducers({
         placemarks,
