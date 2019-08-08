@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {logout} from "../../../../BLL/store/action_creators/auth";
+import {logoutSaga} from "../../../../BLL/store/action_creators/auth";
 
 
 class LogoutLink extends Component {
@@ -15,7 +15,7 @@ class LogoutLink extends Component {
 const mapDispathToProps = (dispatch) => {
     return {
         onLogout() {
-            dispatch(logout());
+            dispatch(logoutSaga());
         }
     }
 };

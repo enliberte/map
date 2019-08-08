@@ -1,5 +1,4 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-import thunk from "redux-thunk";
 import placemarks from  './reducers/placemarks';
 import auth from './reducers/auth';
 import initialState from "./initialState";
@@ -19,10 +18,12 @@ import readItemCard from "./reducers/readItemCard";
 import editItemCard from './reducers/editItemCard';
 import inWorkItemCard from './reducers/inWorkItemCard';
 import doneItemCard from './reducers/doneItemCard';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './saga/rootSaga';
 
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMiddleware(
+const sagaMiddleware = createSagaMiddleware(thunk);
+const store = createStore(
     combineReducers({
         placemarks,
         auth,
@@ -44,7 +45,11 @@ const store = createStoreWithMiddleware(
         form: formReducer
     }),
     initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    compose(
+        applyMiddleware(sagaMiddleware),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 );
+sagaMiddleware.run(rootSaga);
 
 export default store;

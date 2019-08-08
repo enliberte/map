@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import EditItemCardForm from './editItemForm/editItemForm';
 import {closeEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
-import {updatePlacemark} from "../../../BLL/store/action_creators/placemarks";
+import {updatePlacemarkSaga} from "../../../BLL/store/action_creators/placemarks";
 
 
 class EditItemCard extends Component {
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
         onSubmit(data, latitude, longitude) {
             data.latitude = latitude;
             data.longitude = longitude;
-            dispatch(updatePlacemark(data));
+            dispatch(updatePlacemarkSaga(data));
             dispatch(closeEditItemCard());
         },
         onClose() {

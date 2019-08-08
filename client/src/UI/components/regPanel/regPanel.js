@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {register} from "../../../BLL/store/action_creators/auth";
+import {registerSaga} from "../../../BLL/store/action_creators/auth";
 import {closeRegPanel, showRegError} from "../../../BLL/store/action_creators/regPanel";
 import RegForm from './regForm/regForm';
 
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
         onSubmit(regData) {
             const {login, password, passwordRepeat, role} = {...regData};
             if (password === passwordRepeat) {
-                dispatch(register(login, password, role));
+                dispatch(registerSaga(login, password, role));
             } else {
                 dispatch(showRegError());
             }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import osme from 'osme';
 import {colors} from "../../../BLL/store/constants";
-import {addNewPlacemarkWithAddress, setPlacemarks} from "../../../BLL/store/action_creators/placemarks";
+import {addNewPlacemarkWithAddressSaga, setPlacemarksSaga} from "../../../BLL/store/action_creators/placemarks";
 import {openAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 import {setCurrentPlacemark} from "../../../BLL/store/action_creators/currentPlacemark";
 import {openReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
@@ -194,11 +194,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSetPlacemarks() {
-            dispatch(setPlacemarks());
+            dispatch(setPlacemarksSaga());
         },
         onClickOnMap(isAuthorized, coords) {
             if (isAuthorized) {
-                dispatch(addNewPlacemarkWithAddress(coords));
+                dispatch(addNewPlacemarkWithAddressSaga(coords));
                 dispatch(setPosition(coords[1], coords[0]));
             } else {
                 dispatch(openAuthPanel());

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {auth} from "../../../BLL/store/action_creators/auth";
+import {authSaga} from "../../../BLL/store/action_creators/auth";
 import {closeAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 import AuthForm from './authForm/authForm';
 
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit(authData) {
             const {login, password} = {...authData};
-            dispatch(auth(login, password));
+            dispatch(authSaga(login, password));
         },
         onClose() {
             dispatch(closeAuthPanel());

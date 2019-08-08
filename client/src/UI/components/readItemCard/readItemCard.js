@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {closeReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
 import {
-    deletePlacemark,
+    deletePlacemarkSaga,
     setDonePlacemark,
     setEditedPlacemark,
     setInWorkPlacemark
@@ -109,7 +109,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(openEditItemCard());
         },
         onDeletePlacemark(id) {
-            dispatch(deletePlacemark(id));
+            dispatch(deletePlacemarkSaga(id));
         },
         onWork(placemark) {
             dispatch(setInWorkPlacemark(placemark));

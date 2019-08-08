@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DumpMap from './map/map';
-import {isAuthorized} from "../../BLL/store/action_creators/auth";
+import {isAuthorizedSaga} from "../../BLL/store/action_creators/auth";
 import Toolbar from "./toolbar/toolbar";
 import AuthPanel from './authPanel/authPanel';
 import RegPanel from './regPanel/regPanel';
@@ -53,7 +53,7 @@ const mapStatesToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         isAuthorized() {
-            dispatch(isAuthorized());
+            dispatch(isAuthorizedSaga());
         }
     }
 };

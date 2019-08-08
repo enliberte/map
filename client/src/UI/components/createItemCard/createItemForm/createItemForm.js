@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {
     addPicturesToNewPlacemark,
     delPictureFromNewPlacemark,
-    setNewAddressAndCoords
+    setNewAddressAndCoordsSaga
 } from "../../../../BLL/store/action_creators/placemarks";
 
 
@@ -111,7 +111,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSetAddress(event) {
-            dispatch(setNewAddressAndCoords(event.target.value));
+            dispatch(setNewAddressAndCoordsSaga(event.target.value));
         },
         onAddFiles(event) {
             dispatch(addPicturesToNewPlacemark(event.target.files));
