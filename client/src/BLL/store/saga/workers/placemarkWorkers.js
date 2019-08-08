@@ -4,7 +4,7 @@ import {fetchSavePlacemark, fetchUpdatePlacemark, fetchDeletePlacemark, fetchAdd
 import {addNewPlacemark, addPlacemarkToStore, cancelNewPlacemark, updatePlacemarkInStore, deletePlacemarkFromStore, setNewCoordinates, setEditedCoordinates, setPlacemarksInStore} from "../../action_creators/placemarks";
 import {closeReadItemCard} from "../../action_creators/readItemCard";
 import {closeCreateItemCard, openCreateItemCard} from "../../action_creators/createItemCard";
-import {setPosition} from "../../action_creatorsetPlacemarksInStores/map";
+import {setPosition} from "../../action_creators/map";
 import {change} from "redux-form";
 
 
