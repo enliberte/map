@@ -1,3 +1,4 @@
+import regeneratorRuntime from 'regenerator-runtime';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import placemarks from  './reducers/placemarks';
 import auth from './reducers/auth';
