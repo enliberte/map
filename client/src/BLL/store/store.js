@@ -25,7 +25,7 @@ const store = createStore(
         placemarks,
         auth,
         reg,
-        leftPanel
+        leftPanel,
         violationTypes,
         levels,
         newPlacemark,
