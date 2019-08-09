@@ -1,6 +1,6 @@
 import {actions as a} from "../constants";
 
-const initState = () => ({
+const initState = {
     authPanel: false,
     regPanel: false,
     createItemCard: false,
@@ -8,7 +8,7 @@ const initState = () => ({
     editItemCard: false,
     inWorkItemCard: false,
     doneItemCard: false,
-})
+}
 
 const leftPanel = (state={}, action) => {
     switch (action.type) {
