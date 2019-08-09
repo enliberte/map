@@ -1,4 +1,4 @@
-export const authPanelIsDisplayed = state => state.authPanel.isDisplayed;
+export const authPanelIsDisplayed = state => state.leftPanel.authPanel;
 
 export const authError = state => state.auth.authError;
 

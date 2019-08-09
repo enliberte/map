@@ -16,6 +16,11 @@ const auth = (state={}, action) => {
                 login: '',
                 role: ''
             };
+        case a.SHOW_AUTH_ERROR:
+            return {
+                ...state,
+                authError: true
+            };    
         default:
             return state;
     }

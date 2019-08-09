@@ -1,1 +1,1 @@
-export const doneItemCardIsDisplayed = state => state.doneItemCard.isDisplayed;
+export const doneItemCardIsDisplayed = state => state.leftPanel.doneItemCard;

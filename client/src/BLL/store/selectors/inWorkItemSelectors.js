@@ -1,1 +1,1 @@
-export const inWorkItemCardIsDisplayed = state => state.inWorkItemCard.isDisplayed;
+export const inWorkItemCardIsDisplayed = state => state.leftPanel.inWorkItemCard;

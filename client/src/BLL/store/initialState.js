@@ -12,27 +12,17 @@ const initialState = {
         login: '',
         role: ''
     },
-    authPanel: {
-        isDisplayed: false
-    },
-    regPanel: {
-        isDisplayed: false,
+    reg: {
         regError: false
     },
-    createItemCard: {
-        isDisplayed: false
-    },
-    readItemCard: {
-        isDisplayed: false
-    },
-    editItemCard: {
-        isDisplayed: false
-    },
-    inWorkItemCard: {
-        isDisplayed: false
-    },
-    doneItemCard: {
-        isDisplayed: false
+    leftPanel: {
+        authPanel: false,
+        regPanel: false,
+        createItemCard: false,
+        readItemCard: false,
+        editItemCard: false,
+        inWorkItemCard: false,
+        doneItemCard: false,
     },
     violationTypes: [
         'Стихийная свалка',

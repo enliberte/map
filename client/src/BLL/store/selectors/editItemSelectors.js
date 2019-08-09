@@ -1,4 +1,4 @@
-export const editItemCardIsDisplayed = state => state.editItemCard.isDisplayed;
+export const editItemCardIsDisplayed = state => state.leftPanel.editItemCard;
 
 export const getEditedData = state => state.editedPlacemark;
 

@@ -1,4 +1,4 @@
-export const readItemCardIsDisplayed = state => state.readItemCard.isDisplayed;
+export const readItemCardIsDisplayed = state => state.leftPanel.readItemCard;
 
 export const getViolationTypes = state => state.violationTypes;
 

@@ -1,1 +1,1 @@
-export const createItemCardIsDisplayed = state => state.createItemCard.isDisplayed;
+export const createItemCardIsDisplayed = state => state.leftPanel.createItemCard;
