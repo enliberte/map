@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
+import {getFilters, getFilteredPlacemarks} from "../../../BLL/store/selectors/mapSelectors";
 import {setFiltersArchive, setFiltersDone, setFiltersInWork, setFiltersNew}
 from "../../../BLL/store/action_creators/filtrationPanel";
 import {classes, colors as c} from "../../../BLL/store/constants";
@@ -80,8 +80,8 @@ class FiltrationPanel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        filters: state.filters,
-        placemarks: state.placemarks.filter(placemark => state.filters[placemark.state])
+        filters: getFilters(state),
+        placemarks: getFilteredPlacemarks(state)
     }
 };
 

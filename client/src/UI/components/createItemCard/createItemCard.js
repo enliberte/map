@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import CreateItemCardForm from './createItemForm/createItemForm';
 import {closeCreateItemCard} from "../../../BLL/store/action_creators/createItemCard";
 import {cancelNewPlacemark, savePlacemarkSaga} from "../../../BLL/store/action_creators/placemarks";
+import {getLogin} from "../../../BLL/store/selectors/authSelectors";
+import {getNewPlacemarkCoords, getPictures} from "../../../BLL/store/selectors/createItemSelectors";
 
 
 class CreateItemCard extends Component {
@@ -30,9 +32,9 @@ class CreateItemCard extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        login: state.auth.login,
-        coords: state.newPlacemark.coords,
-        pictures: state.newPlacemark.pictures
+        login: getLogin(state),
+        coords: getNewPlacemarkCoords(state),
+        pictures: getPictures(state)
     }
 };
 

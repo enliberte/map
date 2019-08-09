@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import EditItemCardForm from './editItemForm/editItemForm';
 import {closeEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 import {updatePlacemarkSaga} from "../../../BLL/store/action_creators/placemarks";
+import {getLatitude, getLongitude} from "../../../BLL/store/selectors/editItemSelectors";
 
 
 class EditItemCard extends Component {
@@ -29,8 +30,8 @@ class EditItemCard extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        latitude: state.editedPlacemark.latitude,
-        longitude: state.editedPlacemark.longitude
+        latitude: getLatitude(state),
+        longitude: getLongitude(state)
     }
 };
 

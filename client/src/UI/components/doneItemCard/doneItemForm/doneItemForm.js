@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
+import {getEditedData} from "../../../../BLL/store/selectors/editItemSelectors";
 
 
 class DoneItemForm extends Component {
@@ -22,7 +23,7 @@ class DoneItemForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        initialValues: state.editedPlacemark
+        initialValues: getEditedData(state)
     }
 };
 

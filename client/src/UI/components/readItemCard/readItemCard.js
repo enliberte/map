@@ -10,6 +10,8 @@ import {
 import {openEditItemCard} from "../../../BLL/store/action_creators/editItemCard";
 import {openInWorkItemCard} from "../../../BLL/store/action_creators/inWorkItemCard";
 import {openDoneItemCard} from "../../../BLL/store/action_creators/doneItemCard";
+import {getLogin, getRole} from "../../../BLL/store/selectors/authSelectors";
+import {getCurrentPlacemark} from "../../../BLL/store/selectors/mapSelectors";
 
 
 class ReadItemCard extends Component {
@@ -59,7 +61,7 @@ class ReadItemCard extends Component {
                         <p className="application__comments-text">{this.props.placemark.comment}</p>
                     </div>}
 
-                    {(this.props.auth.login === this.props.placemark.author || this.props.auth.role === 'Администрация') && this.props.placemark.state === 'Новая' &&
+                    {(this.props.login === this.props.placemark.author || this.props.role === 'Администрация') && this.props.placemark.state === 'Новая' &&
                     <div className="form-information">
                         <button
                             className="button button--info"
@@ -73,14 +75,14 @@ class ReadItemCard extends Component {
                         </button>
                     </div>}
 
-                    {this.props.auth.role === 'Администрация' && this.props.placemark.state === 'Новая' &&
+                    {this.props.role === 'Администрация' && this.props.placemark.state === 'Новая' &&
                     <button
                         className="button button--default button--success"
                         onClick={() => this.props.onWork(this.props.placemark)}>
                         Взять в работу
                     </button>}
 
-                    {this.props.auth.role === 'Агент' && this.props.placemark.state === 'В работе' &&
+                    {this.props.role === 'Агент' && this.props.placemark.state === 'В работе' &&
                     <button
                         className="button button--default button--success"
                         onClick={() => this.props.onRemove(this.props.placemark)}>
@@ -96,8 +98,9 @@ class ReadItemCard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.auth,
-        placemark: state.placemarks.filter(placemark => placemark.id === state.currentPlacemark)[0]
+        login: getLogin(state),
+        role: getRole(state),
+        placemark: getCurrentPlacemark(state)
     }
 };
 

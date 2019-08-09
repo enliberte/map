@@ -7,6 +7,9 @@ import {openAuthPanel} from "../../../BLL/store/action_creators/authPanel";
 import {setCurrentPlacemark} from "../../../BLL/store/action_creators/currentPlacemark";
 import {openReadItemCard} from "../../../BLL/store/action_creators/readItemCard";
 import {setPosition} from "../../../BLL/store/action_creators/map";
+import {getIsAuthorized} from "../../../BLL/store/selectors/authSelectors";
+import {getMapCoords, getFilteredPlacemarks} from "../../../BLL/store/selectors/mapSelectors";
+import {getNewPlacemark} from "../../../BLL/store/selectors/createItemSelectors";
 
 
 class DumpMap extends Component {
@@ -69,7 +72,7 @@ class DumpMap extends Component {
     }
 
     clickOnMap(coords) {
-        this.props.onClickOnMap(this.props.auth.isAuthorized, coords);
+        this.props.onClickOnMap(this.props.isAuthorized, coords);
     }
 
     createPlacemark() {
@@ -184,10 +187,10 @@ class DumpMap extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.auth,
-        coords: [state.map.latitude, state.map.longitude],
-        placemarks: state.placemarks.filter(placemark => state.filters[placemark.state]),
-        newPlacemark: state.newPlacemark,
+        isAuthorized: getIsAuthorized(state),
+        coords: getMapCoords(state),
+        placemarks: getFilteredPlacemarks(state),
+        newPlacemark: getNewPlacemark(state),
     }
 };
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
+import {getEditedData, getLevels} from "../../../../BLL/store/selectors/editItemSelectors";
 
 
 class InWorkItemForm extends Component {
@@ -50,8 +51,8 @@ class InWorkItemForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        levels: state.levels,
-        initialValues: state.editedPlacemark
+        levels: getLevels(state),
+        initialValues: getEditedData(state)
     }
 };
 

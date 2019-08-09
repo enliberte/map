@@ -11,6 +11,13 @@ import EditItemCard from './editItemCard/editItemCard';
 import InWorkItemCard from "./inWorkItemCard/inWorkItemCard";
 import DoneItemCard from "./doneItemCard/doneItemCard";
 import FiltrationPanel from './filtrationPanel/filtrationPanel';
+import {authPanelIsDisplayed} from "../../BLL/store/selectors/authSelectors";
+import {regPanelIsDisplayed} from "../../BLL/store/selectors/regSelectors";
+import {createItemCardIsDisplayed} from "../../BLL/store/selectors/createItemSelectors";
+import {readItemCardIsDisplayed} from "../../BLL/store/selectors/readItemSelectors";
+import {editItemCardIsDisplayed} from "../../BLL/store/selectors/editItemSelectors";
+import {inWorkItemCardIsDisplayed} from "../../BLL/store/selectors/inWorkItemSelectors";
+import {doneItemCardIsDisplayed} from "../../BLL/store/selectors/doneItemSelectors";
 import './App.module.css';
 
 
@@ -40,13 +47,13 @@ class App extends Component {
 
 const mapStatesToProps = (state) => {
     return {
-        authPanelIsDisplayed: state.authPanel.isDisplayed,
-        regPanelIsDisplayed: state.regPanel.isDisplayed,
-        createItemCardIsDisplayed: state.createItemCard.isDisplayed,
-        readItemCardIsDisplayed: state.readItemCard.isDisplayed,
-        editItemCardIsDisplayed: state.editItemCard.isDisplayed,
-        inWorkItemCardIsDisplayed: state.inWorkItemCard.isDisplayed,
-        doneItemCardIsDisplayed: state.doneItemCard.isDisplayed
+        authPanelIsDisplayed: authPanelIsDisplayed(state),
+        regPanelIsDisplayed: regPanelIsDisplayed(state),
+        createItemCardIsDisplayed: createItemCardIsDisplayed(state),
+        readItemCardIsDisplayed: readItemCardIsDisplayed(state),
+        editItemCardIsDisplayed: editItemCardIsDisplayed(state),
+        inWorkItemCardIsDisplayed: inWorkItemCardIsDisplayed(state),
+        doneItemCardIsDisplayed: doneItemCardIsDisplayed(state)
     }
 };
 

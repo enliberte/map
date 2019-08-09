@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {authSaga} from "../../../BLL/store/action_creators/auth";
 import {closeAuthPanel} from "../../../BLL/store/action_creators/authPanel";
+import {authError} from "../../../BLL/store/selectors/authSelectors";
 import AuthForm from './authForm/authForm';
 
 
@@ -30,7 +31,7 @@ class AuthPanel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: authError(state)
     }
 };
 

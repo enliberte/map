@@ -6,6 +6,7 @@ import {
     delPictureFromNewPlacemark,
     setNewAddressAndCoordsSaga
 } from "../../../../BLL/store/action_creators/placemarks";
+import {getViolationTypes, getPictures, getAddress} from "../../../../BLL/store/selectors/createItemSelectors";
 
 
 class CreateItemForm extends Component {
@@ -101,9 +102,9 @@ class CreateItemForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        violationTypes: state.violationTypes,
-        pictures: state.newPlacemark.pictures,
-        initialValues: {address: state.newPlacemark.address, pictures: null}
+        violationTypes: getViolationTypes(state),
+        pictures: getPictures(state),
+        initialValues: {address: getAddress(state), pictures: null}
     }
 };
 

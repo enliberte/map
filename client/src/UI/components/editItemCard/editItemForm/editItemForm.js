@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {editCoordsSaga} from "../../../../BLL/store/action_creators/placemarks";
+import {getEditedData} from "../../../../BLL/store/selectors/editItemSelectors";
+import {getViolationTypes} from "../../../../BLL/store/selectors/createItemSelectors";
 
 
 class EditItemForm extends Component {
@@ -78,8 +80,8 @@ class EditItemForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        violationTypes: state.violationTypes,
-        initialValues: state.editedPlacemark
+        violationTypes: getViolationTypes(state),
+        initialValues: getEditedData(state)
     }
 };
 

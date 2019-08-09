@@ -3,6 +3,7 @@ import AuthLink from './authLink/authLink';
 import RegLink from './regLink/regLink';
 import LogoutLink from './logoutLink/logoutLink';
 import {connect} from 'react-redux';
+import {getLogin, getIsAuthorized} from "../../../BLL/store/selectors/authSelectors";
 
 
 class Toolbar extends Component {
@@ -29,8 +30,8 @@ class Toolbar extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        login: state.auth.login,
-        isAuthorized: state.auth.isAuthorized
+        login: getLogin(state),
+        isAuthorized: getIsAuthorized(state)
     }
 };
 

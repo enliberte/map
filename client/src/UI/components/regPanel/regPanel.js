@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {registerSaga} from "../../../BLL/store/action_creators/auth";
 import {closeRegPanel, showRegError} from "../../../BLL/store/action_creators/regPanel";
+import {regError} from "../../../BLL/store/selectors/regSelectors";
 import RegForm from './regForm/regForm';
 
 
@@ -30,7 +31,7 @@ class RegPanel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        regError: state.regPanel.regError
+        regError: regError(state)
     }
 };
 

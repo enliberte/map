@@ -1,0 +1,1 @@
+export const inWorkItemCardIsDisplayed = state => state.inWorkItemCard.isDisplayed;
