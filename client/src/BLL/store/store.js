@@ -1,5 +1,6 @@
 import regeneratorRuntime from 'regenerator-runtime';
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
 import placemarks from  './reducers/placemarks';
 import auth from './reducers/auth';
 import reg from "./reducers/reg";
@@ -36,7 +37,7 @@ const store = createStore(
         form: formReducer
     }),
     initialState,
-    applyMiddleware(sagaMiddleware)
+    composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(rootSaga);
 
