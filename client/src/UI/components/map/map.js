@@ -9,7 +9,7 @@ import {openReadItemCard} from "../../../BLL/store/action_creators/readItemCard"
 import {setPosition} from "../../../BLL/store/action_creators/map";
 import {getIsAuthorized} from "../../../BLL/store/selectors/authSelectors";
 import {getMapCoords, getFilteredPlacemarks} from "../../../BLL/store/selectors/mapSelectors";
-import {getNewPlacemark, createItemCardIsDisplayed} from "../../../BLL/store/selectors/createItemSelectors";
+import {getNewPlacemark} from "../../../BLL/store/selectors/createItemSelectors";
 
 
 class DumpMap extends Component {
@@ -149,7 +149,7 @@ class DumpMap extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.Ymap) {
-            if (this.props.newPlacemarkIsDisplayed) {
+            if (this.props.newPlacemark.isDisplayed) {
                 if (this.props.newPlacemark.coords !== prevProps.newPlacemark.coords) {
                     this.removeNewPlacemark();
                     this.createPlacemark();
@@ -187,7 +187,6 @@ class DumpMap extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        newPlacemarkIsDisplayed: createItemCardIsDisplayed(state),
         isAuthorized: getIsAuthorized(state),
         coords: getMapCoords(state),
         placemarks: getFilteredPlacemarks(state),
