@@ -47,7 +47,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(savePlacemarkSaga(data));
         },
         onClose() {
-            dispatch(cancelNewPlacemark());
             dispatch(closeCreateItemCard());
         }
     }
