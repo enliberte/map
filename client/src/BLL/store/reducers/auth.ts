@@ -1,6 +1,14 @@
-import {actions as a} from "../constants";
+import * as a from "../constants";
+import {AuthActions, AuthState} from "../action_creators/types/auth";
 
-const auth = (state={}, action) => {
+const initialState: AuthState = {
+    isAuthorized: false,
+    authError: false,
+    login: '',
+    role: ''
+};
+
+const auth = (state: AuthState = initialState, action: any): AuthState => {
     switch (action.type) {
         case a.SET_AUTH:
             return {

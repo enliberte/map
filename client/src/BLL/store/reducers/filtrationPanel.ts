@@ -1,7 +1,14 @@
-import {actions as a} from '../constants';
+import * as a from '../constants';
+import {FilterActions, Filters} from "../action_creators/types/filtrationPanel";
 
+const initialState = {
+    'Новая': true,
+    'В работе': true,
+    'Выполнена': true,
+    'В архиве': true
+};
 
-const filters = (state='', action) => {
+const filters = (state: Filters = initialState, action: FilterActions): Filters => {
     switch (action.type) {
         case a.SET_FILTERS_ARCHIVE:
             return {

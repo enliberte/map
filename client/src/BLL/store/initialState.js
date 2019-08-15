@@ -1,28 +1,8 @@
 const initialState = {
     placemarks: [],
-    currentPlacemark: '',
-    editedPlacemark: {},
     map: {
         latitude: 57.626578,
         longitude: 39.893858
-    },
-    auth: {
-        isAuthorized: false,
-        authError: false,
-        login: '',
-        role: ''
-    },
-    reg: {
-        regError: false
-    },
-    leftPanel: {
-        authPanel: false,
-        regPanel: false,
-        createItemCard: false,
-        readItemCard: false,
-        editItemCard: false,
-        inWorkItemCard: false,
-        doneItemCard: false,
     },
     violationTypes: [
         'Стихийная свалка',
@@ -41,12 +21,6 @@ const initialState = {
         coords: [],
         address: '',
         pictures: []
-    },
-    filters: {
-        'Новая': true,
-        'В работе': true,
-        'Выполнена': true,
-        'В архиве': true
     },
     roles: [
         'Гражданин',

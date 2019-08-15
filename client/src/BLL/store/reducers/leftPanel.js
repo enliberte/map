@@ -8,9 +8,9 @@ const initState = {
     editItemCard: false,
     inWorkItemCard: false,
     doneItemCard: false,
-}
+};
 
-const leftPanel = (state={}, action) => {
+const leftPanel = (state = initState, action) => {
     switch (action.type) {
         case a.OPEN_AUTH_PANEL:
             return {...initState, authPanel: true};

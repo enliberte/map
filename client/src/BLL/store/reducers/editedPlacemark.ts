@@ -1,7 +1,31 @@
-import {actions as a} from '../constants';
+import * as a from '../constants';
+import {EditActions, PlacemarkData} from "../action_creators/types/placemarks";
+
+const initialState: PlacemarkData = {
+    id: '',
+    address: '',
+    latitude: 0,
+    longitude: 0,
+    comment: '',
+    construction: false,
+    glass: false,
+    household: false,
+    metal: false,
+    other: false,
+    paper: false,
+    plastic: false,
+    violationtype: '',
+    state: 'Новая',
+    administration: '',
+    price: 0,
+    level: 0,
+    author: '',
+    volume: 0,
+    square: 0
+};
 
 
-const editedPlacemark = (state={}, action) => {
+const editedPlacemark = (state: PlacemarkData = initialState, action: any): PlacemarkData => {
     switch (action.type) {
         case a.EDIT_PLACEMARK:
             return action.payload;
